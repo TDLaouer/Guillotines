@@ -9,3 +9,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+# Methode appelee au demarrage/reset de la partie
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.set_deferred("disabled", false)

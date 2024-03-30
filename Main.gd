@@ -11,5 +11,8 @@ func _process(delta):
 	pass
 
 func new_game():
-	$Player.start($StartPosition.position)
-	$StartTimer.start()
+	$Player.start($PlayerStartPosition.position)
+	$Guillotine.start($GuillotineStartPosition.position)
+
+func _on_player_hit():
+	$Player.start($PlayerStartPosition.position)
