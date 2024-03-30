@@ -13,3 +13,8 @@ func _process(delta):
 func new_game():
 	$Player.start($PlayerStartPosition.position)
 	$Guillotine.start($GuillotineStartPosition.position)
+
+
+func _on_player_game_over():
+	print("Game Over !")
+	new_game()

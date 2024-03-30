@@ -1,4 +1,5 @@
 extends CharacterBody2D
+signal game_over
 
 @export var move_speed = 400 # Vitesse du player en pixels/sec
 @export var jump_height : float
@@ -49,6 +50,11 @@ func _physics_process(delta):
 			$AnimatedSprite2D.animation = "jump"
 
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider_shape_index() == 1 or collision.get_collider_shape_index() == 2:
+			hide()
+			game_over.emit()
 
 func jump():
 	velocity.y = ((2.0 * jump_height)  / jump_time_to_peak) * -1.0

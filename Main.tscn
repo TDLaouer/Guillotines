@@ -32,3 +32,5 @@ layer_0/tile_data = PackedInt32Array(1441792, 65536, 1, 1441793, 65536, 1, 14417
 
 [node name="Corde bleu" parent="." instance=ExtResource("5_o7fm6")]
 position = Vector2(-14, -174)
+
+[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
