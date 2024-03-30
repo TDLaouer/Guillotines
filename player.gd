@@ -8,7 +8,6 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
-
 # Methode appelee à chaque frame calculee
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.

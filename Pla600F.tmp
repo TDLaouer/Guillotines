@@ -41,6 +41,7 @@ size = Vector2(12.5, 29)
 [node name="Player" type="RigidBody2D"]
 disable_mode = 2
 script = ExtResource("1_bkai7")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h6gmt")
@@ -52,7 +53,6 @@ shape = SubResource("RectangleShape2D_ijykm")
 disabled = true
 
 [node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(-3, -4)
 zoom = Vector2(2.2, 2.2)
 limit_left = -100
-limit_bottom = 800
+limit_bottom = 400
