@@ -38,9 +38,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijykm"]
 size = Vector2(12.5, 29)
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="CharacterBody2D"]
 disable_mode = 2
 script = ExtResource("1_bkai7")
+move_speed = 200
+jump_height = 100.0
+jump_time_to_peak = 0.5
+jump_time_to_descent = 0.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h6gmt")
