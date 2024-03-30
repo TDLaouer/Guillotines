@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cka3c5x26oord"]
+[gd_scene load_steps=9 format=3 uid="uid://cipi2editgqqx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_y0pnq"]
 [ext_resource type="Texture2D" uid="uid://c60qq6xuajsba" path="res://assets/character/Idle.png" id="2_crjvo"]
@@ -47,7 +47,6 @@ size = Vector2(27, 59)
 script = ExtResource("1_y0pnq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ywb2o")
 animation = &"idle"
 

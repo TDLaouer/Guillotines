@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwrs6r0ys0bep"]
+[gd_scene load_steps=6 format=3 uid="uid://bt8dhgys17150"]
 
 [ext_resource type="Script" path="res://Guillotine.gd" id="1_3bvg7"]
 [ext_resource type="Texture2D" uid="uid://cv7sqpf0afnsl" path="res://assets/others/simple_circle.png" id="1_is3uw"]
