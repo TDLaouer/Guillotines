@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxkihawccdxrw"]
+
+[ext_resource type="Texture2D" uid="uid://c5alnox1r813j" path="res://assets/tiles/textures/rope1_yellow_idle.png" id="1_ujgp2"]
+[ext_resource type="Texture2D" uid="uid://bboemeqiirw0t" path="res://assets/tiles/textures/rope2_yellow_idle.png" id="2_adsng"]
+[ext_resource type="Script" path="res://GuillotineJaune.gd" id="3_x35au"]
+[ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_3h2wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nob13"]
+size = Vector2(12, 22)
+
+[node name="Corde_jaune" type="Node2D"]
+
+[node name="Rope1YellowIdle" type="Sprite2D" parent="."]
+position = Vector2(167, 582)
+texture = ExtResource("1_ujgp2")
+
+[node name="Rope2YellowIdle" type="Sprite2D" parent="."]
+position = Vector2(167, 598)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle2" type="Sprite2D" parent="."]
+position = Vector2(167, 614)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle3" type="Sprite2D" parent="."]
+position = Vector2(167, 630)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle4" type="Sprite2D" parent="."]
+position = Vector2(167, 646)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle5" type="Sprite2D" parent="."]
+position = Vector2(167, 662)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle6" type="Sprite2D" parent="."]
+position = Vector2(167, 678)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle7" type="Sprite2D" parent="."]
+position = Vector2(167, 694)
+texture = ExtResource("2_adsng")
+
+[node name="Rope2YellowIdle8" type="Sprite2D" parent="."]
+position = Vector2(167, 710)
+texture = ExtResource("2_adsng")
+
+[node name="Guillotine3" type="CharacterBody2D" parent="."]
+position = Vector2(167, 647)
+script = ExtResource("3_x35au")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
+texture = ExtResource("4_3h2wk")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
+rotation = -3.14159
+polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
+polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
+shape = SubResource("RectangleShape2D_nob13")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b33isdd6wsftd"]
 
 [ext_resource type="Texture2D" uid="uid://wfvt4qt0f2rk" path="res://assets/tiles/textures/rope2_blue_idle.png" id="1_n81vm"]
-[ext_resource type="Script" path="res://Guillotine3.gd" id="2_onykw"]
-[ext_resource type="Texture2D" uid="uid://bmexce7mmeeyn" path="res://assets/tiles/textures/guillotine3.png" id="3_h1egh"]
+[ext_resource type="Script" path="res://GuillotineBleu.gd" id="2_onykw"]
 [ext_resource type="Texture2D" uid="uid://dal56y62gw50r" path="res://assets/tiles/textures/rope1_blue_idle.png" id="4_qy56t"]
+[ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_xr7mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nob13"]
 size = Vector2(12, 22)
@@ -43,7 +43,7 @@ position = Vector2(167, 647)
 script = ExtResource("2_onykw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
-texture = ExtResource("3_h1egh")
+texture = ExtResource("4_xr7mq")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
 rotation = -3.14159
