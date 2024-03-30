@@ -18,6 +18,29 @@ func _physics_process(delta):
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 
+	sprite_animation()
+
+	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		print("Index : " , collision.get_collider_shape_index())
+		if collision.get_collider_shape_index() == 1:
+			hide()
+			game_over.emit()
+
+# Fonction retournant la velocite verticale en se basant sur la hauteur et le temps de saut voulu
+func jump():
+	velocity.y = ((2.0 * jump_height)  / jump_time_to_peak) * -1.0
+
+# Fonction retournant la velocite verticale en prenant en compte la gravite
+func get_gravity():
+	if velocity.y < 0:
+		return ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1
+	else: 
+		return ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1
+
+# Methode de gestion de l'animation
+func sprite_animation():
 	if velocity.length() > 0:
 		$AnimatedSprite2D.play()
 	else:
@@ -49,30 +72,13 @@ func _physics_process(delta):
 		if $AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle":
 			$AnimatedSprite2D.animation = "jump"
 
-	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		if collision.get_collider_shape_index() == 1 or collision.get_collider_shape_index() == 2:
-			hide()
-			game_over.emit()
-
-func jump():
-	velocity.y = ((2.0 * jump_height)  / jump_time_to_peak) * -1.0
-
-func get_gravity():
-	if velocity.y < 0:
-		return ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1
-	else: 
-		return ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1
-
+# Fonction retournant la velocite horizontale du personnage a la pression d'une touche
 func get_input_velocity():
 	var horizontalVelocity := 0
-	
 	if Input.is_action_pressed("move_left"):
 		horizontalVelocity -= 1
 	if Input.is_action_pressed("move_right"):
 		horizontalVelocity += 1
-		
 	return horizontalVelocity
 
 # Methode appelee au demarrage/reset de la partie
