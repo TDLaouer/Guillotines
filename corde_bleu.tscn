@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7l3ooag1uqps"]
+
+[ext_resource type="Texture2D" uid="uid://wfvt4qt0f2rk" path="res://assets/tiles/textures/rope2_blue_idle.png" id="1_n81vm"]
+[ext_resource type="Script" path="res://Guillotine3.gd" id="2_onykw"]
+[ext_resource type="Texture2D" uid="uid://bmexce7mmeeyn" path="res://assets/tiles/textures/guillotine3.png" id="3_h1egh"]
+[ext_resource type="Texture2D" uid="uid://dal56y62gw50r" path="res://assets/tiles/textures/rope1_blue_idle.png" id="4_qy56t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4l1f"]
+radius = 6.0
+height = 34.0
+
+[node name="Corde bleu" type="Node2D"]
+
+[node name="Rope2BlueIdle" type="Sprite2D" parent="."]
+position = Vector2(167, 598)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope2BlueIdle2" type="Sprite2D" parent="."]
+position = Vector2(167, 614)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope2BlueIdle3" type="Sprite2D" parent="."]
+position = Vector2(167, 630)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope2BlueIdle4" type="Sprite2D" parent="."]
+position = Vector2(167, 646)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope2BlueIdle5" type="Sprite2D" parent="."]
+position = Vector2(167, 662)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope1BlueIdle" type="Sprite2D" parent="."]
+position = Vector2(167, 582)
+texture = ExtResource("4_qy56t")
+
+[node name="Rope2BlueIdle6" type="Sprite2D" parent="."]
+position = Vector2(167, 678)
+texture = ExtResource("1_n81vm")
+
+[node name="Guillotine3" type="CharacterBody2D" parent="."]
+position = Vector2(167, 647)
+script = ExtResource("2_onykw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
+texture = ExtResource("3_h1egh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
+shape = SubResource("CapsuleShape2D_q4l1f")
+
+[node name="Rope2BlueIdle7" type="Sprite2D" parent="."]
+position = Vector2(167, 694)
+texture = ExtResource("1_n81vm")
+
+[node name="Rope2BlueIdle8" type="Sprite2D" parent="."]
+position = Vector2(167, 710)
+texture = ExtResource("1_n81vm")
