@@ -1,5 +1,4 @@
 extends RigidBody2D
-signal hit
 
 @export var speed = 400 # Vitesse du player en pixels/sec
 var screen_size
@@ -16,11 +15,11 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "idle"
 	else:
 		if Input.is_action_pressed("move_right"):
-			velocity.x += 1
+			velocity = velocity.move_toward(Vector2.RIGHT,delta)
 		if Input.is_action_pressed("move_left"):
-			velocity.x -= 1
+			velocity = velocity.move_toward(Vector2.LEFT,delta)
 		if Input.is_action_pressed("move_up"):
-			velocity.y -= 1
+			velocity = velocity.move_toward(Vector2.UP,delta)
 
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
@@ -35,17 +34,10 @@ func _process(delta):
 			$AnimatedSprite2D.animation = "walk"
 			$AnimatedSprite2D.flip_v = false
 			# See the note below about boolean assignment.
-			$AnimatedSprite2D.flip_h = velocity.x < 0	
-
-
+			$AnimatedSprite2D.flip_h = velocity.x < 0
 
 # Methode appelee au demarrage/reset de la partie
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.set_deferred("disabled", false)
-
-
-func _on_body_entered(body):
-	if body.name == "Guillotine":
-		hit.emit()
