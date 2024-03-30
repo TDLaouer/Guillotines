@@ -41,6 +41,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("move_up") and is_on_floor():
 		$AnimatedSprite2D.animation = "jump"
+		$jump_AudioStreamPlayer2D.play()
 		jump()
 	
 	if !is_on_floor() :
