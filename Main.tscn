@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="3_i2khn"]
 [ext_resource type="PackedScene" uid="uid://bt8dhgys17150" path="res://Guillotine.tscn" id="3_s4w2a"]
 [ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://corde_bleu.tscn" id="5_o7fm6"]
-[ext_resource type="PackedScene" uid="uid://8s5ygxyhv6yb" path="res://corde_rouge.tscn" id="7_g2f4p"]
-[ext_resource type="PackedScene" uid="uid://dxkihawccdxrw" path="res://corde_jaune.tscn" id="8_cwc18"]
-[ext_resource type="PackedScene" uid="uid://duqm3rmdul10v" path="res://corde_vert.tscn" id="9_jwrnk"]
+[ext_resource type="PackedScene" uid="uid://ctgqif1l2q8h0" path="res://corde_rouge.tscn" id="7_g2f4p"]
+[ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://corde_jaune.tscn" id="8_cwc18"]
+[ext_resource type="PackedScene" uid="uid://clhprndujns6c" path="res://corde_vert.tscn" id="9_jwrnk"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")

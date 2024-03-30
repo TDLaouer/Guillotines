@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://duqm3rmdul10v"]
+[gd_scene load_steps=6 format=3 uid="uid://clhprndujns6c"]
 
 [ext_resource type="Texture2D" uid="uid://cg3ubaf8ikccc" path="res://assets/tiles/textures/rope1_green_idle.png" id="1_nm5y1"]
 [ext_resource type="Texture2D" uid="uid://cy080e2qrdhyn" path="res://assets/tiles/textures/rope2_green_idle.png" id="2_inh4o"]
@@ -48,6 +48,7 @@ texture = ExtResource("2_inh4o")
 
 [node name="Guillotine3" type="CharacterBody2D" parent="."]
 position = Vector2(167, 647)
+collision_mask = 7
 script = ExtResource("3_ihaa4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
