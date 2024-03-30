@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cka3c5x26oord"]
+[gd_scene load_steps=3 format=3 uid="uid://cka3c5x26oord"]
 
 [ext_resource type="TileSet" uid="uid://c7ehr1ecrqptw" path="res://assets/tiles/default_tileset.tres" id="1_rq0lv"]
 [ext_resource type="Texture2D" uid="uid://cv7sqpf0afnsl" path="res://assets/others/simple_circle.png" id="2_toiaj"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wm4p8"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(33, -12)
@@ -16,10 +14,12 @@ layer_0/tile_data = PackedInt32Array(1835017, 131072, 1, 1835018, 131072, 1, 183
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(34, -77)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_wm4p8")
-
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(238, 448)
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("2_toiaj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(238, 448)
+scale = Vector2(0.29, 0.29)
+polygon = PackedVector2Array(34, -43.3, 34, -41.9, 44, -32.9, 44, -30.5, 50, -20.8, 50, 19.4, 43.3, 34, 41.9, 34, 32.9, 44, 30.5, 44, 20.8, 50, -21.3, 50, -34, 43.2, -34, 41.9, -44, 32.9, -44, 30.5, -50, 20.8, -50, -19.4, -43.3, -34, -41.9, -34, -32.9, -44, -30.5, -44, -19.4, -50, 19.4, -50)
