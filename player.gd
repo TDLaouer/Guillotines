@@ -74,7 +74,7 @@ func sprite_animation():
 		if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
 			$AnimatedSprite2D.animation = "idle"
 		
-	if Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_RIGHT_SHOULDER) and (is_on_floor() or is_grabbing_wall == true):
+	if (Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_RIGHT_SHOULDER)) and (is_on_floor() or is_grabbing_wall == true):
 		$AnimatedSprite2D.animation = "jump"
 		$jump_AudioStreamPlayer2D.play()
 		if is_grabbing_wall == false:
