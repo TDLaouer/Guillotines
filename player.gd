@@ -5,6 +5,7 @@ signal game_over
 @export var jump_height : float
 @export var jump_time_to_peak : float
 @export var jump_time_to_descent : float
+@export var is_grabbing_wall = false
 
 var screen_size
 
@@ -21,16 +22,26 @@ func _physics_process(delta):
 	sprite_animation()
 
 	move_and_slide()
+	is_grabbing_wall = false
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		print("Index : " , collision.get_collider_shape_index())
-		if collision.get_collider_shape_index() == 1:
+		if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
 			hide()
 			game_over.emit()
+		var collision_tilemap_layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
+		if collision_tilemap_layer == 1 and !is_on_floor():
+			is_grabbing_wall = true
 
 # Fonction retournant la velocite verticale en se basant sur la hauteur et le temps de saut voulu
 func jump():
 	velocity.y = ((2.0 * jump_height)  / jump_time_to_peak) * -1.0
+
+func jump_from_wall():
+	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) > 0.5:
+		velocity.x = -5000
+	elif Input.get_joy_axis(0, JOY_AXIS_LEFT_X) < -0.5:
+		velocity.x = 5000
+	jump()
 
 # Fonction retournant la velocite verticale en prenant en compte la gravite
 func get_gravity():
@@ -63,14 +74,26 @@ func sprite_animation():
 		if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
 			$AnimatedSprite2D.animation = "idle"
 		
-	if Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_A) and is_on_floor():
+	if Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_A) and (is_on_floor() or is_grabbing_wall == true):
 		$AnimatedSprite2D.animation = "jump"
 		$jump_AudioStreamPlayer2D.play()
-		jump()
+		if is_grabbing_wall == false:
+			jump()
+		else:
+			jump_from_wall()
 	
 	if !is_on_floor() :
 		if $AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle":
 			$AnimatedSprite2D.animation = "jump"
+	
+	if is_grabbing_wall == true:
+		$AnimatedSprite2D.flip_h = velocity.x > 0
+		$AnimatedSprite2D.animation = "grab"
+		jump_time_to_descent = 200
+	else:
+		jump_time_to_descent = 0.4
+		if !is_on_floor():
+			$AnimatedSprite2D.animation = "float"
 
 # Fonction retournant la velocite horizontale du personnage a la pression d'une touche
 func get_input_velocity():
