@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfgk48ffv6ndm"
-path="res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"
+uid="uid://bd5dy3wm0o07e"
+path="res://.godot/imported/guillotine3.png-f656b962e0e58cd570476ecfef942407.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"]
+source_file="res://assets/tiles/textures/guillotine3.png"
+dest_files=["res://.godot/imported/guillotine3.png-f656b962e0e58cd570476ecfef942407.ctex"]
 
 [params]
 
