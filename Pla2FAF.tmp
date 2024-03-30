@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cipi2editgqqx"]
+[gd_scene load_steps=17 format=3 uid="uid://cipi2editgqqx"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_bkai7"]
 [ext_resource type="Texture2D" uid="uid://b66hyescan1mu" path="res://assets/characters/Idle.png" id="2_4g2g7"]
-[ext_resource type="Texture2D" uid="uid://dhudd74lm00k8" path="res://assets/characters/Float.png" id="2_pe57x"]
 [ext_resource type="Texture2D" uid="uid://cnv7lgnryepdb" path="res://assets/characters/Jump.png" id="3_luo34"]
 [ext_resource type="Texture2D" uid="uid://bwm1f0lt11kko" path="res://assets/characters/Run.png" id="4_4of20"]
 
@@ -50,14 +49,6 @@ region = Rect2(48, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pe57x")
-}],
-"loop": true,
-"name": &"float",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_4g2g7")
 }],
 "loop": false,
@@ -77,7 +68,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3n2xk")
 }],
-"loop": false,
+"loop": true,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -90,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"land",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -122,8 +113,9 @@ jump_time_to_peak = 0.3
 jump_time_to_descent = 0.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_h6gmt")
-animation = &"land"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 1.5)

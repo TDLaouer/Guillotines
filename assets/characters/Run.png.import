@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc3lsjx38145o"
-path="res://.godot/imported/Grab.png-0cb9f747446006bfb3bee6b661cd6c60.ctex"
+uid="uid://bwm1f0lt11kko"
+path="res://.godot/imported/Run.png-b2d13cfc14d1fc1c550403cf250d0e0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/sprites_character/Grab.png"
-dest_files=["res://.godot/imported/Grab.png-0cb9f747446006bfb3bee6b661cd6c60.ctex"]
+source_file="res://assets/characters/Run.png"
+dest_files=["res://.godot/imported/Run.png-b2d13cfc14d1fc1c550403cf250d0e0e.ctex"]
 
 [params]
 

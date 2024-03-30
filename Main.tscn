@@ -10,9 +10,6 @@ script = ExtResource("1_j3w70")
 
 [node name="Player" parent="." instance=ExtResource("2_hy7um")]
 position = Vector2(14, 669)
-jump_height = 100.0
-jump_time_to_peak = 0.5
-jump_time_to_descent = 0.4
 
 [node name="Guillotine" parent="." instance=ExtResource("3_s4w2a")]
 

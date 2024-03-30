@@ -21,17 +21,31 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-
+		
+	if $AnimatedSprite2D.animation == "jump" and $AnimatedSprite2D.frame == 3 :
+		$AnimatedSprite2D.animation = "float"
+		
+	if is_on_floor() and $AnimatedSprite2D.animation == "float":
+		$AnimatedSprite2D.animation = "land"
+		
 	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		# See the note below about boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	else:
-		$AnimatedSprite2D.animation = "idle"
+		if is_on_floor():
+			if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
+				$AnimatedSprite2D.animation = "walk"
+	elif is_on_floor():
+		if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
+			$AnimatedSprite2D.animation = "idle"
 		
 	if Input.is_action_just_pressed("move_up") and is_on_floor():
+		$AnimatedSprite2D.animation = "jump"
 		jump()
+	
+	if !is_on_floor() :
+		if $AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle":
+			$AnimatedSprite2D.animation = "jump"
 
 	move_and_slide()
 
