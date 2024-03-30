@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cka3c5x26oord"]
+
+[ext_resource type="TileSet" uid="uid://c7ehr1ecrqptw" path="res://assets/tiles/default_tileset.tres" id="1_rq0lv"]
+[ext_resource type="Texture2D" uid="uid://cv7sqpf0afnsl" path="res://assets/others/simple_circle.png" id="2_toiaj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wm4p8"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(33, -12)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_rq0lv")
+format = 2
+layer_0/tile_data = PackedInt32Array(1835017, 131072, 1, 1835018, 131072, 1, 1835019, 131072, 1, 1835020, 131072, 1, 1835021, 131072, 1, 1835022, 131072, 1, 1835023, 131072, 1, 1835024, 131072, 1, 1441808, 262144, 2, 1507344, 262144, 3, 1572880, 262144, 3, 1638416, 262144, 3, 1703952, 262144, 3, 1769488, 262144, 4, 1376267, 262144, 0, 1376268, 327680, 0, 1376269, 393216, 0, 1900553, 131072, 2, 1900554, 131072, 2, 1900555, 131072, 2, 1900556, 131072, 2, 1900557, 131072, 2, 1900558, 131072, 2, 1900559, 131072, 2, 1900560, 131072, 2, 1835016, 65536, 1, 1900552, 65536, 2, 1376265, 458752, 0, 1441801, 458752, 1, 1507337, 720896, 4, 1572873, 720896, 4, 1638409, 458752, 1)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(34, -77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_wm4p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(238, 448)
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("2_toiaj")
