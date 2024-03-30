@@ -63,7 +63,7 @@ func sprite_animation():
 		if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
 			$AnimatedSprite2D.animation = "idle"
 		
-	if Input.is_action_just_pressed("move_up") and is_on_floor():
+	if Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_A) and is_on_floor():
 		$AnimatedSprite2D.animation = "jump"
 		$jump_AudioStreamPlayer2D.play()
 		jump()
@@ -75,10 +75,16 @@ func sprite_animation():
 # Fonction retournant la velocite horizontale du personnage a la pression d'une touche
 func get_input_velocity():
 	var horizontalVelocity := 0
-	if Input.is_action_pressed("move_left"):
+	
+	if Input.is_action_pressed("move_left") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_LEFT):
 		horizontalVelocity -= 1
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_RIGHT):
 		horizontalVelocity += 1
+	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) > 0.5:
+		horizontalVelocity += 1
+	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) < -0.5:
+		horizontalVelocity -= 1
+		
 	return horizontalVelocity
 
 # Methode appelee au demarrage/reset de la partie
