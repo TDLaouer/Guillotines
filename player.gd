@@ -38,9 +38,9 @@ func _physics_process(delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
-			hide()
-			game_over.emit()
+		#if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
+			#hide()
+			#game_over.emit()
 		var collision_tilemap_layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
 		if collision_tilemap_layer == 1 and !is_on_floor():
 			last_velocity_x = velocity.x
