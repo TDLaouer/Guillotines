@@ -5,7 +5,13 @@ signal game_over
 @export var jump_height : float
 @export var jump_time_to_peak : float
 @export var jump_time_to_descent : float
-@export var is_grabbing_wall = false
+
+var grabbing_wall_jump_time_to_descent
+var initial_jump_time_to_descent
+var last_velocity_x
+
+var is_grabbing_wall = false
+var is_jumping = false
 
 var screen_size
 
@@ -13,16 +19,26 @@ var screen_size
 func _ready():
 	velocity = Vector2.ZERO
 	screen_size = get_viewport_rect().size
+	initial_jump_time_to_descent = jump_time_to_descent
+	grabbing_wall_jump_time_to_descent = 200
 
 # Methode appelee à chaque frame calculee
 func _physics_process(delta):
+	if is_on_floor():
+		is_jumping = false
+		is_grabbing_wall = false
+		
+	if is_jumping:
+		is_grabbing_wall = false
+		
 	velocity.y += get_gravity() * delta
-	velocity.x = get_input_velocity() * move_speed
+	
+	if !is_jumping:
+		velocity.x = get_input_velocity() * move_speed
 
 	sprite_animation()
 
 	move_and_slide()
-	is_grabbing_wall = false
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
@@ -34,13 +50,15 @@ func _physics_process(delta):
 
 # Fonction retournant la velocite verticale en se basant sur la hauteur et le temps de saut voulu
 func jump():
+	print("Velocity X : ", velocity.x)
+	print("Is player fliped : ", $AnimatedSprite2D.flip_h)
 	velocity.y = ((2.0 * jump_height)  / jump_time_to_peak) * -1.0
 
 func jump_from_wall():
-	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) > 0.5:
-		velocity.x = -5000
-	elif Input.get_joy_axis(0, JOY_AXIS_LEFT_X) < -0.5:
-		velocity.x = 5000
+	if($AnimatedSprite2D.flip_h):
+		velocity.x = -150
+	else:
+		velocity.x = 150
 	jump()
 
 # Fonction retournant la velocite verticale en prenant en compte la gravite
@@ -56,13 +74,16 @@ func sprite_animation():
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-		
+
 	if $AnimatedSprite2D.animation == "jump" and $AnimatedSprite2D.frame == 3 :
 		$AnimatedSprite2D.animation = "float"
-		
+
+	if $AnimatedSprite2D.animation == "float" and $AnimatedSprite2D.frame == 1 :
+		is_jumping = false
+
 	if is_on_floor() and $AnimatedSprite2D.animation == "float":
 		$AnimatedSprite2D.animation = "land"
-		
+
 	if velocity.x != 0:
 		$AnimatedSprite2D.flip_v = false
 		# See the note below about boolean assignment.
@@ -73,10 +94,12 @@ func sprite_animation():
 	elif is_on_floor():
 		if $AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1:
 			$AnimatedSprite2D.animation = "idle"
-		
+
 	if (Input.is_action_just_pressed("move_up") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_UP) or Input.is_joy_button_pressed(0,JOY_BUTTON_RIGHT_SHOULDER)) and (is_on_floor() or is_grabbing_wall == true):
 		$AnimatedSprite2D.animation = "jump"
 		$jump_AudioStreamPlayer2D.play()
+		last_velocity_x = velocity.x
+		is_jumping = true
 		if is_grabbing_wall == false:
 			jump()
 		else:
@@ -87,11 +110,11 @@ func sprite_animation():
 			$AnimatedSprite2D.animation = "jump"
 	
 	if is_grabbing_wall == true:
-		$AnimatedSprite2D.flip_h = velocity.x > 0
+		$AnimatedSprite2D.flip_h = last_velocity_x > 0
 		$AnimatedSprite2D.animation = "grab"
-		jump_time_to_descent = 200
+		jump_time_to_descent = grabbing_wall_jump_time_to_descent
 	else:
-		jump_time_to_descent = 0.4
+		jump_time_to_descent = initial_jump_time_to_descent
 		if !is_on_floor():
 			$AnimatedSprite2D.animation = "float"
 
