@@ -12,6 +12,7 @@ var last_velocity_x
 
 var is_grabbing_wall = false
 var is_jumping = false
+var is_floating = false
 
 var screen_size
 
@@ -25,12 +26,8 @@ func _ready():
 # Methode appelee à chaque frame calculee
 func _physics_process(delta):
 	if is_on_floor():
-		is_jumping = false
-		is_grabbing_wall = false
-		
-	if is_jumping:
-		is_grabbing_wall = false
-		
+		set_is_landing()
+
 	velocity.y += get_gravity() * delta
 	
 	if !is_jumping:
@@ -46,7 +43,29 @@ func _physics_process(delta):
 			game_over.emit()
 		var collision_tilemap_layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
 		if collision_tilemap_layer == 1 and !is_on_floor():
-			is_grabbing_wall = true
+			last_velocity_x = velocity.x
+			set_is_grabbing_wall_func()
+			
+
+func set_is_jumping_func():
+	is_jumping = true
+	is_floating = false
+	is_grabbing_wall = false
+
+func set_is_landing():
+	is_jumping = false
+	is_floating = false
+	is_grabbing_wall = false
+
+func set_is_floating_func():
+	is_jumping = false
+	is_floating = true
+	is_grabbing_wall = false
+
+func set_is_grabbing_wall_func():
+	is_jumping = false
+	is_floating = false 
+	is_grabbing_wall = true
 
 # Fonction retournant la velocite verticale en se basant sur la hauteur et le temps de saut voulu
 func jump():
@@ -79,10 +98,11 @@ func sprite_animation():
 		$AnimatedSprite2D.animation = "float"
 
 	if $AnimatedSprite2D.animation == "float" and $AnimatedSprite2D.frame == 1 :
-		is_jumping = false
+		set_is_floating_func()
 
 	if is_on_floor() and $AnimatedSprite2D.animation == "float":
 		$AnimatedSprite2D.animation = "land"
+		set_is_landing()
 
 	if velocity.x != 0:
 		$AnimatedSprite2D.flip_v = false
@@ -99,10 +119,11 @@ func sprite_animation():
 		$AnimatedSprite2D.animation = "jump"
 		$jump_AudioStreamPlayer2D.play()
 		last_velocity_x = velocity.x
-		is_jumping = true
 		if is_grabbing_wall == false:
+			set_is_jumping_func()
 			jump()
 		else:
+			set_is_jumping_func()
 			jump_from_wall()
 	
 	if !is_on_floor() :
