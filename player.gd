@@ -42,7 +42,6 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		set_is_landing()
-		#save_velocity_x()
 	
 	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN):
 		set_is_fast_falling_func()
@@ -153,9 +152,6 @@ func sprite_animation():
 		set_is_floating_func()
 	if $AnimatedSprite2D.animation == "grab" and $AnimatedSprite2D.frame == 1 and !is_fast_falling:
 		set_is_grabbing_wall_func()
-	if is_on_floor() and $AnimatedSprite2D.animation == "float":
-		$AnimatedSprite2D.animation = "land"
-		set_is_landing()
 	if $AnimatedSprite2D.animation == "jump" and $AnimatedSprite2D.frame == 3 :
 		$AnimatedSprite2D.animation = "float"
 	if is_on_floor() and velocity.x != 0 and ($AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1):
@@ -173,6 +169,10 @@ func sprite_animation():
 			jump()
 	if !is_on_floor() and ($AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle"):
 		$AnimatedSprite2D.animation = "jump"
+	
+	if is_on_floor() and $AnimatedSprite2D.animation == "float":
+		$AnimatedSprite2D.animation = "land"
+		set_is_landing()
 	
 	$AnimatedSprite2D.flip_v = false
 	$AnimatedSprite2D.flip_h = is_looking_left
