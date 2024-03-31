@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=14 format=3 uid="uid://ds57uoaw877rk"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://ds57uoaw877rk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
@@ -13,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cfhky1m0eb02f" path="res://elevator.tscn" id="9_t4882"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="11_vieba"]
 [ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="12_qg0n5"]
+[ext_resource type="Texture2D" uid="uid://c0vg8vm06e7oi" path="res://assets/Ui/RB_button.png" id="14_jetpj"]
+[ext_resource type="Texture2D" uid="uid://cllyjd4a5mnxh" path="res://assets/Ui/Haut.png" id="15_6fdbl"]
+[ext_resource type="Texture2D" uid="uid://dtljjowxpctaf" path="res://assets/Ui/X_button.png" id="17_1jutd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
@@ -133,6 +140,18 @@ position = Vector2(1063, 431)
 
 [node name="checkpoint3" parent="." instance=ExtResource("12_qg0n5")]
 position = Vector2(2203, 672)
+
+[node name="RbButton" type="Sprite2D" parent="."]
+position = Vector2(63, 642)
+texture = ExtResource("14_jetpj")
+
+[node name="XButton" type="Sprite2D" parent="."]
+position = Vector2(269, 572)
+texture = ExtResource("17_1jutd")
+
+[node name="Haut" type="Sprite2D" parent="."]
+position = Vector2(63, 626)
+texture = ExtResource("15_6fdbl")
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="trigger_chkpt" from="checkpoint" to="PlayerStartPosition" method="triggered_checkpoint"]
