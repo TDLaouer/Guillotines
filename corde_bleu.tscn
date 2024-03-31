@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_xr7mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nob13"]
-size = Vector2(12, 22)
+size = Vector2(12, 54)
 
 [node name="Corde bleu" type="Node2D"]
 
@@ -55,10 +55,12 @@ script = ExtResource("2_onykw")
 texture = ExtResource("4_xr7mq")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, 16)
 rotation = -3.14159
 polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, -16)
 polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
