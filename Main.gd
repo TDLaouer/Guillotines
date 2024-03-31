@@ -16,5 +16,6 @@ func new_game():
 
 
 func _on_player_game_over():
+	$Player/death_AudioStreamPlayer.play()
 	print("Game Over !")
 	new_game()
