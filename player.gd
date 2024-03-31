@@ -143,14 +143,15 @@ func sprite_animation():
 func get_input_velocity():
 	var horizontalVelocity := 0
 	
-	if Input.is_action_pressed("move_left") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_LEFT):
-		horizontalVelocity -= 1
-	if Input.is_action_pressed("move_right") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_RIGHT):
-		horizontalVelocity += 1
-	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) > 0.5:
-		horizontalVelocity += 1
-	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) < -0.5:
-		horizontalVelocity -= 1
+	if !is_grabbing_wall:
+		if Input.is_action_pressed("move_left") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_LEFT):
+			horizontalVelocity -= 1
+		if Input.is_action_pressed("move_right") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_RIGHT):
+			horizontalVelocity += 1
+		if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) > 0.5:
+			horizontalVelocity += 1
+		if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) < -0.5:
+			horizontalVelocity -= 1
 		
 	return horizontalVelocity
 
