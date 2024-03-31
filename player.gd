@@ -41,6 +41,7 @@ func _physics_process(delta):
 		#if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
 			#hide()
 			#game_over.emit()
+			#$death_AudioStreamPlayer.play()
 		var collision_tilemap_layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
 		if collision_tilemap_layer == 1 and !is_on_floor():
 			last_velocity_x = velocity.x
