@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=14 format=3 uid="uid://ds57uoaw877rk"]
-=======
-[gd_scene load_steps=16 format=3 uid="uid://ds57uoaw877rk"]
->>>>>>> Stashed changes
+[gd_scene load_steps=17 format=3 uid="uid://ds57uoaw877rk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
