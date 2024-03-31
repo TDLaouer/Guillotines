@@ -82,10 +82,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_pe57x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pe57x")
 }],
 "loop": true,
 "name": &"float",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -163,7 +166,7 @@ jump_time_to_descent = 0.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h6gmt")
-animation = &"jump"
+animation = &"float"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 1.5)
