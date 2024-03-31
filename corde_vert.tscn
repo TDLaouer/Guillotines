@@ -63,3 +63,7 @@ polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
 shape = SubResource("RectangleShape2D_nob13")
+
+[node name="Timer" type="Timer" parent="Guillotine3"]
+
+[connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
