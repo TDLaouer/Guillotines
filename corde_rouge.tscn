@@ -1,14 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctgqif1l2q8h0"]
+[gd_scene load_steps=7 format=3 uid="uid://ctgqif1l2q8h0"]
 
 [ext_resource type="Texture2D" uid="uid://dhsa2qh12em1w" path="res://assets/tiles/textures/rope1_red_idle.png" id="1_bmx2h"]
 [ext_resource type="Texture2D" uid="uid://jqodfga15vem" path="res://assets/tiles/textures/rope2_red_idle.png" id="1_ee7c5"]
 [ext_resource type="Script" path="res://GuillotineRouge.gd" id="3_cm80r"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_ribqx"]
+[ext_resource type="Texture2D" uid="uid://4nveiwvpjjnw" path="res://assets/tiles/textures/rope_red_node.png" id="5_wv4rr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy07m"]
 size = Vector2(12, 54)
 
 [node name="Corde rouge" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(167, 567)
+collision_layer = 8
+collision_mask = 15
+
+[node name="Rope1RedIdle" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("1_bmx2h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
 
 [node name="Rope2RedIdle" type="Sprite2D" parent="."]
 position = Vector2(167, 598)
@@ -34,12 +46,8 @@ texture = ExtResource("1_ee7c5")
 position = Vector2(167, 646)
 texture = ExtResource("1_ee7c5")
 
-[node name="Rope1RedIdle" type="Sprite2D" parent="."]
-position = Vector2(167, 582)
-texture = ExtResource("1_bmx2h")
-
 [node name="Guillotine3" type="CharacterBody2D" parent="."]
-position = Vector2(167, 597)
+position = Vector2(167, 625)
 collision_mask = 7
 script = ExtResource("3_cm80r")
 
@@ -61,5 +69,19 @@ shape = SubResource("RectangleShape2D_gy07m")
 [node name="Timer" type="Timer" parent="Guillotine3"]
 wait_time = 3.0
 one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -64)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(167.1, 725.6)
+scale = Vector2(1.02083, 0.96875)
+polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
+
+[node name="RopeRedNode" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(167, 726)
+texture = ExtResource("5_wv4rr")
 
 [connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]

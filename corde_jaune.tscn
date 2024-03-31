@@ -1,18 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwwwgijpvkswr"]
+[gd_scene load_steps=7 format=3 uid="uid://bwwwgijpvkswr"]
 
 [ext_resource type="Texture2D" uid="uid://c5alnox1r813j" path="res://assets/tiles/textures/rope1_yellow_idle.png" id="1_ujgp2"]
 [ext_resource type="Texture2D" uid="uid://bboemeqiirw0t" path="res://assets/tiles/textures/rope2_yellow_idle.png" id="2_adsng"]
 [ext_resource type="Script" path="res://GuillotineJaune.gd" id="3_x35au"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_3h2wk"]
+[ext_resource type="Texture2D" uid="uid://cpfn0pjigps23" path="res://assets/tiles/textures/rope_yellow_node.png" id="5_e0agq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d6k1"]
 size = Vector2(12, 54)
 
 [node name="Corde_jaune" type="Node2D"]
 
-[node name="Rope1YellowIdle" type="Sprite2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(167, 582)
+collision_layer = 8
+collision_mask = 15
+
+[node name="Rope1YellowIdle" type="Sprite2D" parent="StaticBody2D2"]
 texture = ExtResource("1_ujgp2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
 
 [node name="Rope2YellowIdle" type="Sprite2D" parent="."]
 position = Vector2(167, 598)
@@ -69,5 +77,18 @@ shape = SubResource("RectangleShape2D_6d6k1")
 [node name="Timer" type="Timer" parent="Guillotine3"]
 wait_time = 3.0
 one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(167.1, 725.6)
+scale = Vector2(1.02083, 0.96875)
+polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
+
+[node name="RopeYellowNode" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(167, 726)
+texture = ExtResource("5_e0agq")
 
 [connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
