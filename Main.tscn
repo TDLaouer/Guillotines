@@ -20,7 +20,7 @@ script = ExtResource("1_j3w70")
 [node name="Guillotine" parent="." instance=ExtResource("3_s4w2a")]
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(1494, 467)
+position = Vector2(11, 672)
 script = ExtResource("3_7xqet")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
@@ -107,7 +107,7 @@ position = Vector2(1448, -287)
 position = Vector2(1764, -161)
 
 [node name="Player" parent="." instance=ExtResource("2_hy7um")]
-position = Vector2(14, 669)
+position = Vector2(24, 671)
 
 [node name="jump_AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_i2khn")
