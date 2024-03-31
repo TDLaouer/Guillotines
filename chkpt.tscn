@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfg7t13hak38a"]
 
-[ext_resource type="Script" path="res://Test/chkpt.gd" id="1_q2me5"]
+[ext_resource type="Script" path="res://chkpt.gd" id="1_q2me5"]
 [ext_resource type="Texture2D" uid="uid://tfgyyqjw2g6k" path="res://assets/tiles/textures/checkpoint_pole.png" id="2_nkwb7"]
 [ext_resource type="Texture2D" uid="uid://c8lpkbelox5oj" path="res://assets/tiles/textures/checkpoint_rope.png" id="3_fd157"]
 
