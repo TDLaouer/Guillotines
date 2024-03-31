@@ -20,7 +20,7 @@ script = ExtResource("1_j3w70")
 [node name="Guillotine" parent="." instance=ExtResource("3_s4w2a")]
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(11, 672)
+position = Vector2(1328, 629)
 script = ExtResource("3_7xqet")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
@@ -95,7 +95,7 @@ position = Vector2(1057, -31)
 position = Vector2(1249, -95)
 
 [node name="Corde bleu9" parent="Room5" instance=ExtResource("5_o7fm6")]
-position = Vector2(1153, -175)
+position = Vector2(1189, -174)
 
 [node name="Corde_vert" parent="Room5" instance=ExtResource("9_jwrnk")]
 position = Vector2(1281, -208)
