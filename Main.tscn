@@ -1,11 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://ds57uoaw877rk"]
+[gd_scene load_steps=22 format=3 uid="uid://ds57uoaw877rk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_7xqet"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="3_cpfhb"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="3_i2khn"]
-[ext_resource type="PackedScene" path="res://Guillotine.tscn" id="3_s4w2a"]
+[ext_resource type="PackedScene" uid="uid://bt8dhgys17150" path="res://Guillotine.tscn" id="3_s4w2a"]
 [ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://corde_bleu.tscn" id="5_o7fm6"]
 [ext_resource type="PackedScene" uid="uid://ctgqif1l2q8h0" path="res://corde_rouge.tscn" id="7_g2f4p"]
 [ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://corde_jaune.tscn" id="8_cwc18"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://djmcsvwqp2wkr" path="res://assets/Ui/B_button.png" id="18_84ikd"]
 [ext_resource type="Texture2D" uid="uid://e34iyursgpls" path="res://assets/Ui/A_button.png" id="19_fjao4"]
 [ext_resource type="Texture2D" uid="uid://8lvvr6toirt4" path="res://assets/Ui/LB_button.png" id="20_0q01j"]
+[ext_resource type="PackedScene" uid="uid://ccq8p66j6i857" path="res://credit.tscn" id="21_pdhb8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
@@ -167,6 +168,23 @@ position = Vector2(1063, 431)
 
 [node name="checkpoint3" parent="." instance=ExtResource("12_qg0n5")]
 position = Vector2(2203, 672)
+
+[node name="Credit" parent="." instance=ExtResource("21_pdhb8")]
+offset_left = -99.0
+offset_top = 46.0
+offset_right = -99.0
+offset_bottom = 46.0
+
+[node name="Button2" type="Button" parent="Credit"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 1409.0
+offset_right = 125.0
+offset_bottom = 1440.0
+grow_vertical = 0
+text = "Return to main"
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="trigger_chkpt" from="checkpoint" to="PlayerStartPosition" method="triggered_checkpoint"]
