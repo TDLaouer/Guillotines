@@ -14,7 +14,6 @@ func _process(delta):
 		velocity.y = 1 + SPEED
 		timer.start()
 	elif timer.is_stopped():
-		print(timer.time_left)
 		velocity.y = 1 + -SPEED
 	else:
 		velocity.y = 0

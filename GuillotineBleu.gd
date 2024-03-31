@@ -14,12 +14,14 @@ func _process(delta):
 		velocity.y = 1 + SPEED
 		timer.start()
 	elif timer.is_stopped():
-		print(timer.time_left)
 		velocity.y = 1 + -SPEED
 	else:
 		velocity.y = 0
 	move_and_slide()
-
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		print(collision.get_collider().name)
 
 func _on_timer_timeout():
 	pass # Replace with function body.

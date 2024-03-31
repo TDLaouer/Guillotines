@@ -48,7 +48,7 @@ texture = ExtResource("1_n81vm")
 
 [node name="Guillotine3" type="CharacterBody2D" parent="."]
 position = Vector2(167, 647)
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("2_onykw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
@@ -69,5 +69,20 @@ shape = SubResource("RectangleShape2D_nob13")
 [node name="Timer" type="Timer" parent="Guillotine3"]
 wait_time = 1.5
 one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(167, 725.6)
+rotation = 3.14159
+scale = Vector2(1, 0.96875)
+polygon = PackedVector2Array(3, 8, -3, 8, -3, -8, 3, -8)
+one_way_collision = true
+
+[node name="Rope2BlueIdle9" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(167, 726)
+texture = ExtResource("1_n81vm")
 
 [connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
