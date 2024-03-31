@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://GuillotineJaune.gd" id="3_x35au"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_3h2wk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nob13"]
-size = Vector2(12, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d6k1"]
+size = Vector2(12, 54)
 
 [node name="Corde_jaune" type="Node2D"]
 
@@ -55,14 +55,16 @@ script = ExtResource("3_x35au")
 texture = ExtResource("4_3h2wk")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, 16)
 rotation = -3.14159
 polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, -16)
 polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
-shape = SubResource("RectangleShape2D_nob13")
+shape = SubResource("RectangleShape2D_6d6k1")
 
 [node name="Timer" type="Timer" parent="Guillotine3"]
 wait_time = 1.5
