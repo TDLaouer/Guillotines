@@ -45,7 +45,8 @@ func _physics_process(delta):
 		if collision_tilemap_layer == 1 and !is_on_floor():
 			last_velocity_x = velocity.x
 			set_is_grabbing_wall_func()
-			
+		if collision_tilemap_layer == 16:
+			game_over.emit()
 
 func set_is_jumping_func():
 	is_jumping = true

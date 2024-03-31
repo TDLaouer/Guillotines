@@ -21,7 +21,6 @@ func _process(delta):
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		print(collision.get_collider().name)
 
 func _on_timer_timeout():
 	pass # Replace with function body.
