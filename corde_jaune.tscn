@@ -67,7 +67,7 @@ polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
 shape = SubResource("RectangleShape2D_6d6k1")
 
 [node name="Timer" type="Timer" parent="Guillotine3"]
-wait_time = 1.5
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
