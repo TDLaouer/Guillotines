@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfhky1m0eb02f"]
+[gd_scene load_steps=7 format=3 uid="uid://cfhky1m0eb02f"]
 
 [ext_resource type="Texture2D" uid="uid://dfuhpmfs1s24v" path="res://assets/tiles/textures/chain1.png" id="1_mujvk"]
 [ext_resource type="Texture2D" uid="uid://cqdw7hbiqiqgp" path="res://assets/tiles/textures/chain2.png" id="2_4g8gk"]
 [ext_resource type="Texture2D" uid="uid://bidsfd8nb7g8c" path="res://assets/tiles/textures/platform_elevator.png" id="3_4mvnl"]
+[ext_resource type="Script" path="res://Elevator.gd" id="3_ekwak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3o8s"]
 size = Vector2(0, 207)
@@ -128,7 +129,7 @@ position = Vector2(0, 160)
 texture = ExtResource("2_4g8gk")
 
 [node name="Blocage" type="StaticBody2D" parent="."]
-position = Vector2(15, 0)
+position = Vector2(16, 0)
 collision_layer = 8
 collision_mask = 15
 
@@ -137,7 +138,7 @@ position = Vector2(224, 677.5)
 shape = SubResource("RectangleShape2D_b3o8s")
 
 [node name="Blocage2" type="StaticBody2D" parent="."]
-position = Vector2(-65, 0)
+position = Vector2(-66, 0)
 collision_layer = 8
 collision_mask = 15
 
@@ -146,7 +147,7 @@ position = Vector2(224, 677.5)
 shape = SubResource("RectangleShape2D_b3o8s")
 
 [node name="Blocage3" type="StaticBody2D" parent="."]
-position = Vector2(-65, 0)
+position = Vector2(-65, 1)
 collision_layer = 8
 collision_mask = 15
 
@@ -154,6 +155,21 @@ collision_mask = 15
 position = Vector2(264, 782)
 shape = SubResource("RectangleShape2D_27ruy")
 
-[node name="PlatformElevator" type="Sprite2D" parent="."]
-position = Vector2(199, 774)
+[node name="Elevator" type="CharacterBody2D" parent="."]
+position = Vector2(167, 647)
+collision_mask = 15
+script = ExtResource("3_ekwak")
+
+[node name="PlatformElevator" type="Sprite2D" parent="Elevator"]
+position = Vector2(32, 127)
 texture = ExtResource("3_4mvnl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Elevator"]
+position = Vector2(32, 127)
+polygon = PackedVector2Array(40, 8, -40, 8, -40, -8, 40, -8)
+
+[node name="Timer" type="Timer" parent="Elevator"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Elevator/Timer" to="Elevator" method="_on_timer_timeout"]

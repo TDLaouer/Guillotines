@@ -7,10 +7,10 @@ var SPEED = 150.0
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_joy_button_pressed(0,JOY_BUTTON_LEFT_SHOULDER):
+		floor_constant_speed
 		velocity.y = 1 + SPEED
 		timer.start()
 	elif timer.is_stopped():
