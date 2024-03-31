@@ -154,7 +154,7 @@ size = Vector2(12.5, 29)
 
 [node name="Player" type="CharacterBody2D"]
 disable_mode = 2
-collision_mask = 7
+collision_mask = 23
 script = ExtResource("1_bkai7")
 move_speed = 300
 jump_height = 75.0
