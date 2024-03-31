@@ -16,27 +16,33 @@ offset_top = 689.0
 offset_right = 125.0
 offset_bottom = 720.0
 grow_vertical = 0
-text = "Return to main"
+text = "Return to menu"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 498.0
+offset_top = 152.0
+offset_right = 1315.0
+offset_bottom = 651.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "CAKY"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "FIFI"
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "ERWAN"
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "ZELDA"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
