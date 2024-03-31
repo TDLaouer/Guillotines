@@ -42,12 +42,14 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		set_is_landing()
-		save_velocity_x()
+		#save_velocity_x()
 	
 	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN):
 		set_is_fast_falling_func()
 		jump_time_to_descent = initial_jump_time_to_descent
-		print("Descends je t'en supplie")
+	
+	if is_fast_falling:
+		$AnimatedSprite2D.animation = "fast_fall"
 	
 	if !is_jumping:
 		velocity.x = get_input_velocity() * move_speed
@@ -169,7 +171,6 @@ func sprite_animation():
 		else:
 			set_is_jumping_func()
 			jump()
-	
 	if !is_on_floor() and ($AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle"):
 		$AnimatedSprite2D.animation = "jump"
 	
