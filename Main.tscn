@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds57uoaw877rk"]
+[gd_scene load_steps=13 format=3 uid="uid://ds57uoaw877rk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://corde_jaune.tscn" id="8_cwc18"]
 [ext_resource type="PackedScene" uid="uid://clhprndujns6c" path="res://corde_vert.tscn" id="9_jwrnk"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="11_vieba"]
+[ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="12_qg0n5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
@@ -71,5 +72,11 @@ stream = ExtResource("3_i2khn")
 
 [node name="death_AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("11_vieba")
+
+[node name="checkpoint" parent="." instance=ExtResource("12_qg0n5")]
+position = Vector2(64, 686)
+
+[node name="checkpoint2" parent="." instance=ExtResource("12_qg0n5")]
+position = Vector2(168, 686)
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]

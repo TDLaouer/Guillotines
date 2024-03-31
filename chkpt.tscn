@@ -1,36 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfg7t13hak38a"]
+[gd_scene load_steps=6 format=3 uid="uid://dfg7t13hak38a"]
 
 [ext_resource type="Script" path="res://chkpt.gd" id="1_q2me5"]
 [ext_resource type="Texture2D" uid="uid://tfgyyqjw2g6k" path="res://assets/tiles/textures/checkpoint_pole.png" id="2_nkwb7"]
 [ext_resource type="Texture2D" uid="uid://c8lpkbelox5oj" path="res://assets/tiles/textures/checkpoint_rope.png" id="3_fd157"]
+[ext_resource type="AudioStream" uid="uid://cjyw4oe0vc4nm" path="res://assets/sounds/chkpt_sound.wav" id="4_u66mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27tew"]
-size = Vector2(15.182, 28.3871)
+size = Vector2(15.6735, 17.6344)
 
 [node name="checkpoint" type="Node2D"]
 script = ExtResource("1_q2me5")
 
 [node name="chkpt_pole_right" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(17, -16)
+position = Vector2(13, -12)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_nkwb7")
 
 [node name="chkpt_pole_left" type="Sprite2D" parent="."]
 z_index = 10
-position = Vector2(-16, -16)
+position = Vector2(-13, -12)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_nkwb7")
 
 [node name="rope" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(0.500001, -22)
-scale = Vector2(1.9375, 0.58125)
+position = Vector2(0, -16)
+scale = Vector2(1.53125, 0.58125)
 texture = ExtResource("3_fd157")
 
 [node name="chkpt_rope_Area2D" type="Area2D" parent="rope"]
 
 [node name="chkpt_rope_CollisionShape2D" type="CollisionShape2D" parent="rope/chkpt_rope_Area2D"]
-position = Vector2(-0.107143, 9.89248)
+position = Vector2(0, 3.44086)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_27tew")
+
+[node name="checkpoint_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u66mt")
+volume_db = -10.0
 
 [connection signal="body_entered" from="rope/chkpt_rope_Area2D" to="." method="_on_area_2d_body_entered"]

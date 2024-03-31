@@ -9,7 +9,7 @@ func _on_area_2d_body_entered(body):
 	trigger_chkpt.emit(rope.global_position)
 	shape.set_deferred("disabled", true)
 	rope.visible = false
-	
+	$checkpoint_AudioStreamPlayer.play()
 	
 	
 
