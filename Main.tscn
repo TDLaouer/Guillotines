@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_7xqet"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="3_cpfhb"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="3_i2khn"]
-[ext_resource type="PackedScene" path="res://Guillotine.tscn" id="3_s4w2a"]
+[ext_resource type="PackedScene" uid="uid://bt8dhgys17150" path="res://Guillotine.tscn" id="3_s4w2a"]
 [ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://corde_bleu.tscn" id="5_o7fm6"]
 [ext_resource type="PackedScene" uid="uid://ctgqif1l2q8h0" path="res://corde_rouge.tscn" id="7_g2f4p"]
 [ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://corde_jaune.tscn" id="8_cwc18"]
