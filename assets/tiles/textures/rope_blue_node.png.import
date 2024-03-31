@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wfmxvquf4ui4"
-path="res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"
+uid="uid://5gk01bxpuahc"
+path="res://.godot/imported/rope_blue_node.png-7c3f9df46de56a1c493b31d5ca2eb7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"]
+source_file="res://assets/tiles/textures/rope_blue_node.png"
+dest_files=["res://.godot/imported/rope_blue_node.png-7c3f9df46de56a1c493b31d5ca2eb7d7.ctex"]
 
 [params]
 
