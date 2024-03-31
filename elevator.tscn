@@ -1,0 +1,159 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfhky1m0eb02f"]
+
+[ext_resource type="Texture2D" uid="uid://dfuhpmfs1s24v" path="res://assets/tiles/textures/chain1.png" id="1_mujvk"]
+[ext_resource type="Texture2D" uid="uid://cqdw7hbiqiqgp" path="res://assets/tiles/textures/chain2.png" id="2_4g8gk"]
+[ext_resource type="Texture2D" uid="uid://bidsfd8nb7g8c" path="res://assets/tiles/textures/platform_elevator.png" id="3_4mvnl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3o8s"]
+size = Vector2(0, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27ruy"]
+size = Vector2(80, 0)
+
+[node name="Elevator" type="Node2D"]
+position = Vector2(-159, -63)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(167, 582)
+collision_layer = 8
+collision_mask = 15
+
+[node name="Rope1BlueIdle" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("1_mujvk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(232, 582)
+collision_layer = 8
+collision_mask = 15
+
+[node name="Rope1BlueIdle" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("1_mujvk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
+
+[node name="Left chain" type="Node2D" parent="."]
+position = Vector2(167, 598)
+
+[node name="Chain2" type="Sprite2D" parent="Left chain"]
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain3" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 16)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain4" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 32)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain5" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 48)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain6" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 64)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain7" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 80)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain8" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 96)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain9" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 112)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain10" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 128)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain11" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 144)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain12" type="Sprite2D" parent="Left chain"]
+position = Vector2(0, 160)
+texture = ExtResource("2_4g8gk")
+
+[node name="Right chain" type="Node2D" parent="."]
+position = Vector2(232, 598)
+
+[node name="Chain2" type="Sprite2D" parent="Right chain"]
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain3" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 16)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain4" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 32)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain5" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 48)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain6" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 64)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain7" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 80)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain8" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 96)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain9" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 112)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain10" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 128)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain11" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 144)
+texture = ExtResource("2_4g8gk")
+
+[node name="Chain12" type="Sprite2D" parent="Right chain"]
+position = Vector2(0, 160)
+texture = ExtResource("2_4g8gk")
+
+[node name="Blocage" type="StaticBody2D" parent="."]
+position = Vector2(15, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage"]
+position = Vector2(224, 677.5)
+shape = SubResource("RectangleShape2D_b3o8s")
+
+[node name="Blocage2" type="StaticBody2D" parent="."]
+position = Vector2(-65, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(224, 677.5)
+shape = SubResource("RectangleShape2D_b3o8s")
+
+[node name="Blocage3" type="StaticBody2D" parent="."]
+position = Vector2(-65, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage3"]
+position = Vector2(264, 782)
+shape = SubResource("RectangleShape2D_27ruy")
+
+[node name="PlatformElevator" type="Sprite2D" parent="."]
+position = Vector2(199, 774)
+texture = ExtResource("3_4mvnl")
