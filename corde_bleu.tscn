@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5gk01bxpuahc" path="res://assets/tiles/textures/rope_blue_node.png" id="5_3bc3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nob13"]
-size = Vector2(12, 54)
+size = Vector2(12, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3o8s"]
 size = Vector2(0, 159)
@@ -68,11 +68,11 @@ texture = ExtResource("4_xr7mq")
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
 position = Vector2(0, 16)
 rotation = -3.14159
-polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
 position = Vector2(0, -16)
-polygon = PackedVector2Array(6, -11, -6, -11, -4, -16, 4, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
 shape = SubResource("RectangleShape2D_nob13")
