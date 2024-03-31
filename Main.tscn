@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://corde_jaune.tscn" id="8_cwc18"]
 [ext_resource type="PackedScene" uid="uid://clhprndujns6c" path="res://corde_vert.tscn" id="9_jwrnk"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="11_vieba"]
-[ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="12_qg0n5"]
+[ext_resource type="PackedScene" path="res://chkpt.tscn" id="12_qg0n5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
