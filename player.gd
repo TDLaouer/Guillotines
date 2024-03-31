@@ -31,7 +31,7 @@ func _ready():
 # Methode appelee à chaque frame calculee
 func _physics_process(delta):
 	
-	if Input.is_action_just_pressed("reset"):
+	if Input.is_action_just_pressed("reset") or Input.is_joy_button_pressed(0, JOY_BUTTON_BACK):
 		hide()
 		game_over.emit()
 	
@@ -43,7 +43,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		set_is_landing()
 	
-	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN):
+	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN) or Input.get_joy_axis(0, JOY_AXIS_LEFT_Y) == 1:
 		set_is_fast_falling_func()
 		jump_time_to_descent = initial_jump_time_to_descent
 	

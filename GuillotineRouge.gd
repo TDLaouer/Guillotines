@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_joy_button_pressed(0,JOY_BUTTON_B):
+	if Input.is_joy_button_pressed(0,JOY_BUTTON_B) or Input.is_action_pressed("corde_rouge"):
 		velocity.y = 1 + SPEED
 		timer.start()
 	elif timer.is_stopped():
