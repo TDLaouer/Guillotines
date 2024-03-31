@@ -13,6 +13,7 @@ var just_grabbing : float
 
 var is_grabbing_wall : bool
 var is_jumping : bool
+var already_jumped : bool
 var is_floating : bool
 var is_fast_falling := true
 var is_looking_right : bool
@@ -46,6 +47,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN):
 		set_is_fast_falling_func()
 		jump_time_to_descent = initial_jump_time_to_descent
+		print("Descends je t'en supplie")
 	
 	if !is_jumping:
 		velocity.x = get_input_velocity() * move_speed
@@ -145,7 +147,7 @@ func sprite_animation():
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	if $AnimatedSprite2D.animation == "float" and $AnimatedSprite2D.frame == 2 :
+	if $AnimatedSprite2D.animation == "float" and $AnimatedSprite2D.frame == 1 :
 		set_is_floating_func()
 	if $AnimatedSprite2D.animation == "grab" and $AnimatedSprite2D.frame == 1 and !is_fast_falling:
 		set_is_grabbing_wall_func()
