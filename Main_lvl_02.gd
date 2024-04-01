@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	if is_music_playing == 0:
 		AudioPlayer.stop_all()
+		AudioPlayer.autoplay("level_two")
 		AudioPlayer.play("level_two")
 	is_music_playing += 1.0
 
