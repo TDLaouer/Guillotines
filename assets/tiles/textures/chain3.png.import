@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmsw23eyjrlkq"
-path="res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"
+uid="uid://btatup81u31a2"
+path="res://.godot/imported/chain3.png-75ad41b143801d03cba0a1b18eeeb6f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-09f7b61f1368e3714994c90f0228a1b5.ctex"]
+source_file="res://assets/tiles/textures/chain3.png"
+dest_files=["res://.godot/imported/chain3.png-75ad41b143801d03cba0a1b18eeeb6f6.ctex"]
 
 [params]
 
