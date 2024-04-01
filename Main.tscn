@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://djmcsvwqp2wkr" path="res://assets/Ui/B_button.png" id="18_84ikd"]
 [ext_resource type="Texture2D" uid="uid://e34iyursgpls" path="res://assets/Ui/A_button.png" id="19_fjao4"]
 [ext_resource type="Texture2D" uid="uid://8lvvr6toirt4" path="res://assets/Ui/LB_button.png" id="20_0q01j"]
-[ext_resource type="PackedScene" uid="uid://bpythdnwn8b8j" path="res://end_of_level.tscn" id="25_acvki"]
+[ext_resource type="PackedScene" path="res://end_of_level.tscn" id="25_acvki"]
 [ext_resource type="PackedScene" uid="uid://c8kphg1nj5or7" path="res://Main_lvl_02.tscn" id="26_jbai5"]
 
 [node name="Main" type="Node"]
@@ -34,7 +34,7 @@ script = ExtResource("1_j3w70")
 visible = false
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(45, 603)
+position = Vector2(2307, 643)
 script = ExtResource("3_7xqet")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
