@@ -9,30 +9,102 @@ script = ExtResource("1_0scr3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 498.0
-offset_top = 152.0
-offset_right = 1315.0
-offset_bottom = 651.0
+offset_left = 485.0
+offset_top = 58.0
+offset_right = 1302.0
+offset_bottom = 557.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "CAKY"
+theme_override_font_sizes/font_size = 48
+text = "Crédits"
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "FIFI"
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 502.0
+offset_top = 161.0
+offset_right = 925.0
+offset_bottom = 447.0
+grow_horizontal = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "ERWAN"
+theme_override_font_sizes/font_size = 24
+text = "Created by :
+"
 
-[node name="Label4" type="Label" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "ZELDA"
+text = "Archelune - Fifi
+Caky
+Kyorh - Erwan
+Zeldaelle"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 502.0
+offset_top = 337.0
+offset_right = 925.0
+offset_bottom = 623.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Music :"
+
+[node name="Label2" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+text = "Cover of \"Vamo alla flamenco\" by Nobuo Uematsu
+Cover of \"Melodies of life\" by Nobuo Uematsu"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 502.0
+offset_top = 457.0
+offset_right = 925.0
+offset_bottom = 743.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Mix ending :
+"
+
+[node name="Label2" type="Label" parent="VBoxContainer5"]
+layout_mode = 2
+text = "Hisa"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 502.0
+offset_top = 545.0
+offset_right = 925.0
+offset_bottom = 831.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Some assets
+"
+
+[node name="Label2" type="Label" parent="VBoxContainer6"]
+layout_mode = 2
+text = "Kenney"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
