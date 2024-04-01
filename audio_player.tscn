@@ -18,6 +18,8 @@ stream = ExtResource("3_2pe7q")
 
 [node name="level_one" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vaj1x")
+volume_db = -15.0
 
 [node name="level_two" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_spp5f")
+volume_db = -15.0
