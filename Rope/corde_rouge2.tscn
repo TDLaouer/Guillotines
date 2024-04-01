@@ -6,11 +6,11 @@
 [ext_resource type="Script" path="res://Rope/GuillotineRouge.gd" id="4_03p53"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="5_cpmn4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t822j"]
-size = Vector2(0, 923)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ms8cb"]
 size = Vector2(12, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t822j"]
+size = Vector2(0.25, 394)
 
 [node name="Corde rouge" type="Node2D"]
 
@@ -162,96 +162,91 @@ polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
 position = Vector2(480, 475)
 texture = ExtResource("3_ewvx7")
 
+[node name="Guillotine3" type="CharacterBody2D" parent="."]
+position = Vector2(480, 358)
+collision_mask = 15
+script = ExtResource("4_03p53")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
+texture = ExtResource("5_cpmn4")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, 16)
+rotation = -3.14159
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
+shape = SubResource("RectangleShape2D_ms8cb")
+
+[node name="Timer" type="Timer" parent="Guillotine3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Guillotine4" type="CharacterBody2D" parent="."]
+position = Vector2(480, 508)
+collision_mask = 15
+script = ExtResource("4_03p53")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine4"]
+texture = ExtResource("5_cpmn4")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine4"]
+position = Vector2(0, 16)
+rotation = -3.14159
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine4"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine4"]
+shape = SubResource("RectangleShape2D_ms8cb")
+
+[node name="Timer" type="Timer" parent="Guillotine4"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Guillotine5" type="CharacterBody2D" parent="."]
+position = Vector2(480, 588)
+collision_mask = 15
+script = ExtResource("4_03p53")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine5"]
+texture = ExtResource("5_cpmn4")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine5"]
+position = Vector2(0, 16)
+rotation = -3.14159
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine5"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine5"]
+shape = SubResource("RectangleShape2D_ms8cb")
+
+[node name="Timer" type="Timer" parent="Guillotine5"]
+wait_time = 3.0
+one_shot = true
+
 [node name="Blocage2" type="StaticBody2D" parent="."]
 position = Vector2(1, 0)
 collision_layer = 8
 collision_mask = 15
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(485, 507.5)
+shape = SubResource("RectangleShape2D_t822j")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage2"]
-position = Vector2(472.75, 703.5)
+position = Vector2(471.875, 508)
 shape = SubResource("RectangleShape2D_t822j")
 
-[node name="Blocage" type="StaticBody2D" parent="."]
-position = Vector2(15, 0)
-collision_layer = 8
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage"]
-position = Vector2(471, 483.5)
-shape = SubResource("RectangleShape2D_t822j")
-
-[node name="Guillotine3" type="CharacterBody2D" parent="Blocage"]
-position = Vector2(465, 358)
-collision_mask = 15
-script = ExtResource("4_03p53")
-
-[node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine3"]
-texture = ExtResource("5_cpmn4")
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine3"]
-position = Vector2(0, 16)
-rotation = -3.14159
-polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocage/Guillotine3"]
-position = Vector2(0, -16)
-polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage/Guillotine3"]
-shape = SubResource("RectangleShape2D_ms8cb")
-
-[node name="Timer" type="Timer" parent="Blocage/Guillotine3"]
-wait_time = 3.0
-one_shot = true
-
-[node name="Guillotine4" type="CharacterBody2D" parent="Blocage"]
-position = Vector2(465, 508)
-collision_mask = 15
-script = ExtResource("4_03p53")
-
-[node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine4"]
-texture = ExtResource("5_cpmn4")
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine4"]
-position = Vector2(0, 16)
-rotation = -3.14159
-polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocage/Guillotine4"]
-position = Vector2(0, -16)
-polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage/Guillotine4"]
-shape = SubResource("RectangleShape2D_ms8cb")
-
-[node name="Timer" type="Timer" parent="Blocage/Guillotine4"]
-wait_time = 3.0
-one_shot = true
-
-[node name="Guillotine5" type="CharacterBody2D" parent="Blocage"]
-position = Vector2(465, 588)
-collision_mask = 15
-script = ExtResource("4_03p53")
-
-[node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine5"]
-texture = ExtResource("5_cpmn4")
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine5"]
-position = Vector2(0, 16)
-rotation = -3.14159
-polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocage/Guillotine5"]
-position = Vector2(0, -16)
-polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage/Guillotine5"]
-shape = SubResource("RectangleShape2D_ms8cb")
-
-[node name="Timer" type="Timer" parent="Blocage/Guillotine5"]
-wait_time = 3.0
-one_shot = true
-
-[connection signal="timeout" from="Blocage/Guillotine3/Timer" to="Blocage/Guillotine3" method="_on_timer_timeout"]
-[connection signal="timeout" from="Blocage/Guillotine4/Timer" to="Blocage/Guillotine4" method="_on_timer_timeout"]
-[connection signal="timeout" from="Blocage/Guillotine5/Timer" to="Blocage/Guillotine5" method="_on_timer_timeout"]
+[connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Guillotine4/Timer" to="Guillotine4" method="_on_timer_timeout"]
+[connection signal="timeout" from="Guillotine5/Timer" to="Guillotine5" method="_on_timer_timeout"]

@@ -10,7 +10,7 @@
 size = Vector2(12, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3g87"]
-size = Vector2(0, 449)
+size = Vector2(0, 302)
 
 [node name="Corde_jaune" type="Node2D"]
 
@@ -170,16 +170,11 @@ collision_layer = 8
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage2"]
-position = Vector2(591, 356.5)
+position = Vector2(591, 335.5)
 shape = SubResource("RectangleShape2D_m3g87")
 
-[node name="Blocage" type="StaticBody2D" parent="."]
-position = Vector2(15, 0)
-collision_layer = 8
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage"]
-position = Vector2(590, 315.5)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(604, 336)
 shape = SubResource("RectangleShape2D_m3g87")
 
 [connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
