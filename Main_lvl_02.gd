@@ -18,7 +18,6 @@ func new_game():
 	$Player.start($PlayerStartPosition.position)
 	$Guillotine.start($GuillotineStartPosition.position)
 
-
 func _on_player_game_over():
 	$Player/death_AudioStreamPlayer.play()
 	print("Game Over !")

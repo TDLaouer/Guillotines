@@ -138,6 +138,7 @@ position = Vector2(665, -33)
 
 [node name="lvl_end_point" parent="." instance=ExtResource("16_sriyt")]
 position = Vector2(1673, -471)
+next_level = ExtResource("21_mws3c")
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="trigger_chkpt" from="checkpoint" to="PlayerStartPosition" method="triggered_checkpoint"]
