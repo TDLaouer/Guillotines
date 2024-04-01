@@ -12,6 +12,10 @@ func stop(sound):
 		if node.name == sound:
 			node.stop()
 
+func stop_all():
+	for node in get_children():
+		node.stop()
+
 func autoplay(sound):
 	for node in get_children():
 		if node.name == sound:
