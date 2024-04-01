@@ -45,7 +45,7 @@ texture = ExtResource("2_ik45q")
 visible = false
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(76, 588)
+position = Vector2(19, 603)
 script = ExtResource("3_7xqet")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
