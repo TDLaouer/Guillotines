@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_music_playing == 0:
+		AudioPlayer.stop_all()
 		AudioPlayer.play("level_two")
 	is_music_playing += 1.0
 

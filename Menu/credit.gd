@@ -5,14 +5,13 @@ var is_music_playing := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer2/Menu.grab_focus()
-	if is_music_playing == 0:
-		AudioPlayer.play("credits_song")
-	is_music_playing += 1.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if is_music_playing == 0:
+		AudioPlayer.play("credits_song")
+	is_music_playing += 1.0
 
 
 func _on_button_pressed():
