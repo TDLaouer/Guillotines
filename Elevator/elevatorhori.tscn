@@ -10,7 +10,7 @@
 size = Vector2(0, 207)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27ruy"]
-size = Vector2(80, 0)
+size = Vector2(626, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itlof"]
 size = Vector2(624, 1)
@@ -37,7 +37,7 @@ collision_layer = 8
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage3"]
-position = Vector2(264, 782)
+position = Vector2(537, 782)
 shape = SubResource("RectangleShape2D_27ruy")
 
 [node name="Blocage4" type="StaticBody2D" parent="."]
