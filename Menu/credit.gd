@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$VBoxContainer2/Menu.grab_focus()
 	pass # Replace with function body.
 
 
@@ -12,5 +13,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Menu/Menu.tscn")
+	get_tree().change_scene_to_file("res://Menu.tscn")
 	pass # Replace with function body.
