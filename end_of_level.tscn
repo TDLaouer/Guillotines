@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpythdnwn8b8j"]
+
+[ext_resource type="Texture2D" uid="uid://eb6cnt8yjjvl" path="res://assets/tiles/textures/end_of-level_left.png" id="1_8myoi"]
+[ext_resource type="Script" path="res://end_of_level.gd" id="1_pe5sb"]
+[ext_resource type="Texture2D" uid="uid://by8yyrmahwyx5" path="res://assets/tiles/textures/end_of-level_right.png" id="2_wbdtc"]
+[ext_resource type="Texture2D" uid="uid://ci4xv0yv57g5i" path="res://assets/tiles/textures/end_of-level_bg.png" id="3_3p5sw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lutr5"]
+size = Vector2(15.5, 77.5)
+
+[node name="lvl_end_point" type="Node2D"]
+position = Vector2(0, -39)
+script = ExtResource("1_pe5sb")
+
+[node name="end_of_level_left" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-25, 0)
+texture = ExtResource("1_8myoi")
+
+[node name="end_of_level_right" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(25, 0)
+texture = ExtResource("2_wbdtc")
+
+[node name="ending_Area2D" type="Area2D" parent="end_of_level_right"]
+
+[node name="ending_CollisionShape2D" type="CollisionShape2D" parent="end_of_level_right/ending_Area2D"]
+position = Vector2(22.75, -0.25)
+shape = SubResource("RectangleShape2D_lutr5")
+
+[node name="end_of_level_bg" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("3_3p5sw")
+
+[connection signal="body_entered" from="end_of_level_right/ending_Area2D" to="." method="_on_ending_area_2d_body_entered"]
