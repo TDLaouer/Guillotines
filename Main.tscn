@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ds57uoaw877rk"]
+[gd_scene load_steps=26 format=3 uid="uid://ds57uoaw877rk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://e34iyursgpls" path="res://assets/Ui/A_button.png" id="19_fjao4"]
 [ext_resource type="Texture2D" uid="uid://8lvvr6toirt4" path="res://assets/Ui/LB_button.png" id="20_0q01j"]
 [ext_resource type="PackedScene" uid="uid://bpythdnwn8b8j" path="res://end_of_level.tscn" id="25_acvki"]
-[ext_resource type="PackedScene" uid="uid://c1dwks4r8830x" path="res://Main_lvl_02.tscn" id="26_jbai5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
@@ -191,14 +190,9 @@ position = Vector2(415, 320)
 [node name="checkpoint2" parent="." instance=ExtResource("12_qg0n5")]
 position = Vector2(1063, 431)
 
-[node name="checkpoint3" parent="." instance=ExtResource("12_qg0n5")]
-position = Vector2(2203, 672)
-
 [node name="lvl_end_point" parent="." instance=ExtResource("25_acvki")]
-position = Vector2(300, 648)
-next_level = ExtResource("26_jbai5")
+position = Vector2(2216, 633)
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="trigger_chkpt" from="checkpoint" to="PlayerStartPosition" method="triggered_checkpoint"]
 [connection signal="trigger_chkpt" from="checkpoint2" to="PlayerStartPosition" method="triggered_checkpoint"]
-[connection signal="trigger_chkpt" from="checkpoint3" to="PlayerStartPosition" method="triggered_checkpoint"]
