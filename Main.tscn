@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://ds57uoaw877rk"]
+[gd_scene load_steps=28 format=3 uid="uid://ds57uoaw877rk"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_j3w70"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="2_hy7um"]
+[ext_resource type="Texture2D" uid="uid://dnc3of7fjepoa" path="res://assets/others/curtainv2.png" id="2_ik45q"]
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_7xqet"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="3_cpfhb"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="3_i2khn"]
@@ -16,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://clhprndujns6c" path="res://Rope/corde_vert.tscn" id="9_jwrnk"]
 [ext_resource type="PackedScene" uid="uid://cfhky1m0eb02f" path="res://Elevator/elevator.tscn" id="9_t4882"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="11_vieba"]
-[ext_resource type="PackedScene" path="res://chkpt.tscn" id="12_qg0n5"]
+[ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="12_qg0n5"]
 [ext_resource type="Texture2D" uid="uid://c0vg8vm06e7oi" path="res://assets/Ui/RB_button.png" id="14_jetpj"]
 [ext_resource type="Texture2D" uid="uid://cllyjd4a5mnxh" path="res://assets/Ui/Haut.png" id="15_6fdbl"]
 [ext_resource type="Texture2D" uid="uid://dtljjowxpctaf" path="res://assets/Ui/X_button.png" id="17_1jutd"]
@@ -30,11 +31,21 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_j3w70")
 
+[node name="Curtainv2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(822, 155)
+texture = ExtResource("2_ik45q")
+
+[node name="Curtainv3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(2742, 153)
+texture = ExtResource("2_ik45q")
+
 [node name="Guillotine" parent="." instance=ExtResource("3_s4w2a")]
 visible = false
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(2307, 643)
+position = Vector2(76, 588)
 script = ExtResource("3_7xqet")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
