@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Guillotines"
+config/name="Coupe de Théatre"
 run/main_scene="res://Menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://assets/Ui/Icon.svg"
 
 [autoload]
 
