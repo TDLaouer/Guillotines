@@ -38,7 +38,7 @@ text = "Start"
 
 [node name="Credit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Credit"
+text = "Crédits"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
