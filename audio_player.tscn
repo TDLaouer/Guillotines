@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d635ne5xib30"]
+[gd_scene load_steps=7 format=3 uid="uid://d635ne5xib30"]
 
 [ext_resource type="Script" path="res://audio_player.gd" id="1_sem3i"]
 [ext_resource type="AudioStream" uid="uid://buuwfws607513" path="res://assets/sounds/changing_level.mp3" id="2_6a4y8"]
 [ext_resource type="AudioStream" uid="uid://d0ytwq7cbbhav" path="res://assets/sounds/button.mp3" id="3_2pe7q"]
+[ext_resource type="AudioStream" uid="uid://do4f842l3vkif" path="res://assets/sounds/Caky_-_Melodies_of_Life.wav" id="4_02jfc"]
 [ext_resource type="AudioStream" uid="uid://bt7oaky13bje6" path="res://assets/sounds/level_one.wav" id="4_vaj1x"]
 [ext_resource type="AudioStream" uid="uid://lmj1bl3cy5en" path="res://assets/sounds/level_two.wav" id="5_spp5f"]
 
@@ -15,6 +16,10 @@ volume_db = -5.0
 
 [node name="clic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2pe7q")
+
+[node name="credits_song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_02jfc")
+volume_db = -15.0
 
 [node name="level_one" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vaj1x")
