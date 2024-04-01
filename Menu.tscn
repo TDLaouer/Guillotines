@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4nghvhw0ebwe"]
+[gd_scene load_steps=4 format=3 uid="uid://ckyis3mr2iwp0"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_3bfsk"]
 [ext_resource type="Texture2D" uid="uid://bb62lvfasyti8" path="res://assets/Ui/Logo.png" id="2_f5nj8"]
+[ext_resource type="Texture2D" uid="uid://b66hyescan1mu" path="res://assets/characters/Idle.png" id="3_kiiw6"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -40,6 +41,11 @@ text = "Quit"
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(590, 207)
 texture = ExtResource("2_f5nj8")
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(297, 535)
+scale = Vector2(10, 10)
+texture = ExtResource("3_kiiw6")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_credit_pressed"]

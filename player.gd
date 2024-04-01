@@ -31,7 +31,7 @@ func _ready():
 # Methode appelee à chaque frame calculee
 func _physics_process(delta):
 	
-	if Input.is_action_just_pressed("reset"):
+	if Input.is_action_just_pressed("reset") or Input.is_joy_button_pressed(0, JOY_BUTTON_BACK):
 		hide()
 		game_over.emit()
 	
@@ -42,9 +42,8 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		set_is_landing()
-		#save_velocity_x()
 	
-	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN):
+	if Input.is_action_just_pressed("move_down") or Input.is_joy_button_pressed(0,JOY_BUTTON_DPAD_DOWN) or Input.get_joy_axis(0, JOY_AXIS_LEFT_Y) == 1:
 		set_is_fast_falling_func()
 		jump_time_to_descent = initial_jump_time_to_descent
 	
@@ -73,9 +72,9 @@ func _physics_process(delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		#if collision.get_collider().name == "Guillotine3" and collision.get_collider_shape_index() == 1:
-			#hide()
-			#game_over.emit()
+		if collision.get_collider().name == "Guillotine3" and (collision.get_collider_shape_index() == 1 or collision.get_collider_shape_index() == 0):
+			hide()
+			game_over.emit()
 		var collision_tilemap_layer = PhysicsServer2D.body_get_collision_layer(collision.get_collider_rid())
 		if collision_tilemap_layer == 1 and !is_on_floor() and !is_fast_falling:
 			set_is_grabbing_wall_func()
@@ -153,9 +152,6 @@ func sprite_animation():
 		set_is_floating_func()
 	if $AnimatedSprite2D.animation == "grab" and $AnimatedSprite2D.frame == 1 and !is_fast_falling:
 		set_is_grabbing_wall_func()
-	if is_on_floor() and $AnimatedSprite2D.animation == "float":
-		$AnimatedSprite2D.animation = "land"
-		set_is_landing()
 	if $AnimatedSprite2D.animation == "jump" and $AnimatedSprite2D.frame == 3 :
 		$AnimatedSprite2D.animation = "float"
 	if is_on_floor() and velocity.x != 0 and ($AnimatedSprite2D.animation != "land" or $AnimatedSprite2D.frame == 1):
@@ -173,6 +169,10 @@ func sprite_animation():
 			jump()
 	if !is_on_floor() and ($AnimatedSprite2D.animation == "walk" or $AnimatedSprite2D.animation == "idle"):
 		$AnimatedSprite2D.animation = "jump"
+	
+	if is_on_floor() and $AnimatedSprite2D.animation == "float":
+		$AnimatedSprite2D.animation = "land"
+		set_is_landing()
 	
 	$AnimatedSprite2D.flip_v = false
 	$AnimatedSprite2D.flip_h = is_looking_left
