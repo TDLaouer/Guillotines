@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://clhprndujns6c" path="res://Rope/corde_vert.tscn" id="9_jwrnk"]
 [ext_resource type="PackedScene" uid="uid://cfhky1m0eb02f" path="res://Elevator/elevator.tscn" id="9_t4882"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="11_vieba"]
-[ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="12_qg0n5"]
+[ext_resource type="PackedScene" path="res://chkpt.tscn" id="12_qg0n5"]
 [ext_resource type="Texture2D" uid="uid://c0vg8vm06e7oi" path="res://assets/Ui/RB_button.png" id="14_jetpj"]
 [ext_resource type="Texture2D" uid="uid://cllyjd4a5mnxh" path="res://assets/Ui/Haut.png" id="15_6fdbl"]
 [ext_resource type="Texture2D" uid="uid://dtljjowxpctaf" path="res://assets/Ui/X_button.png" id="17_1jutd"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://djmcsvwqp2wkr" path="res://assets/Ui/B_button.png" id="18_84ikd"]
 [ext_resource type="Texture2D" uid="uid://e34iyursgpls" path="res://assets/Ui/A_button.png" id="19_fjao4"]
 [ext_resource type="Texture2D" uid="uid://8lvvr6toirt4" path="res://assets/Ui/LB_button.png" id="20_0q01j"]
-[ext_resource type="PackedScene" path="res://end_of_level.tscn" id="25_acvki"]
+[ext_resource type="PackedScene" uid="uid://bpythdnwn8b8j" path="res://end_of_level.tscn" id="25_acvki"]
 [ext_resource type="PackedScene" uid="uid://c8kphg1nj5or7" path="res://Main_lvl_02.tscn" id="26_jbai5"]
 
 [node name="Main" type="Node"]

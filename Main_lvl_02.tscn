@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" path="res://chkpt.tscn" id="15_y23jr"]
 [ext_resource type="PackedScene" uid="uid://bpythdnwn8b8j" path="res://end_of_level.tscn" id="16_sriyt"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="17_2v53c"]
+[ext_resource type="PackedScene" uid="uid://ccq8p66j6i857" path="res://Menu/credit.tscn" id="17_hm45c"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="18_wlw1h"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="19_j1ibn"]
-[ext_resource type="PackedScene" uid="uid://ccq8p66j6i857" path="res://Menu/credit.tscn" id="21_mws3c"]
 
 [node name="level_2" type="Node"]
 script = ExtResource("1_2hvre")
@@ -112,24 +112,6 @@ stream = ExtResource("18_wlw1h")
 [node name="death_AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("19_j1ibn")
 
-[node name="Credit" parent="." instance=ExtResource("21_mws3c")]
-visible = false
-offset_left = -99.0
-offset_top = 46.0
-offset_right = -99.0
-offset_bottom = 46.0
-
-[node name="Button2" type="Button" parent="Credit"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 1409.0
-offset_right = 125.0
-offset_bottom = 1440.0
-grow_vertical = 0
-text = "Return to main"
-
 [node name="checkpoint" parent="." instance=ExtResource("15_y23jr")]
 position = Vector2(1158, 306)
 
@@ -138,7 +120,7 @@ position = Vector2(665, -33)
 
 [node name="lvl_end_point" parent="." instance=ExtResource("16_sriyt")]
 position = Vector2(1673, -471)
-next_level = ExtResource("21_mws3c")
+next_level = ExtResource("17_hm45c")
 
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="trigger_chkpt" from="checkpoint" to="PlayerStartPosition" method="triggered_checkpoint"]
