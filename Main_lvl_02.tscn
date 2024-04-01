@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8kphg1nj5or7"]
+[gd_scene load_steps=11 format=3 uid="uid://c8kphg1nj5or7"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_n8lqm"]
 [ext_resource type="PackedScene" uid="uid://bg24oecj33abg" path="res://Guillotine.tscn" id="2_om8ll"]
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_k8q0v"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="4_yrs5p"]
+[ext_resource type="PackedScene" path="res://elevatorhori.tscn" id="5_7c6rg"]
+[ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://corde_bleu.tscn" id="13_70iun"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="17_2v53c"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="18_wlw1h"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="19_j1ibn"]
@@ -16,7 +18,7 @@ script = ExtResource("1_n8lqm")
 visible = false
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(22, 611)
+position = Vector2(-50, 612)
 script = ExtResource("3_k8q0v")
 
 [node name="GuillotineStartPosition" type="Marker2D" parent="."]
@@ -25,10 +27,19 @@ position = Vector2(300, 200)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_yrs5p")
 format = 2
-layer_0/tile_data = PackedInt32Array(2555905, 65536, 0, 2555906, 131072, 0, 2555907, 196608, 0)
+layer_0/tile_data = PackedInt32Array(2555905, 131072, 1, 2555906, 131072, 1, 2555907, 131072, 1, 2555904, 131072, 1, 2621439, 131072, 1, 2686975, 131072, 2, 2621440, 131072, 2, 2621441, 131072, 2, 2621442, 131072, 2, 2621443, 131072, 2, 2752511, 131072, 2, 2686976, 131072, 2, 2686977, 131072, 2, 2686978, 131072, 2, 2686979, 131072, 2, 2555908, 131072, 1, 2621444, 131072, 2, 2686980, 131072, 2, 2424847, 65536, 0, 2424848, 131072, 0, 2424849, 196608, 0, 2818053, 65536, 3, 2818054, 65536, 3, 2818055, 65536, 3, 2818056, 65536, 3, 2818057, 65536, 3, 2818058, 65536, 3, 2818059, 65536, 3, 2818060, 65536, 3, 2818061, 65536, 3, 2818062, 65536, 3, 2818063, 65536, 3, 2818064, 65536, 3, 2818065, 65536, 3, 2818066, 65536, 3, 2818067, 65536, 3, 2818068, 65536, 3, 2818069, 65536, 3, 2621438, 131072, 1, 2621437, 131072, 1, 2621436, 131072, 1, 2686974, 131072, 2, 2686973, 131072, 2, 2686972, 131072, 2, 2752508, 131072, 2, 2752509, 131072, 2, 2752510, 131072, 2, 2818070, 65536, 3, 2818071, 65536, 3, 2818072, 65536, 3, 2818073, 65536, 3, 2883610, 65536, 3, 2883611, 65536, 3, 2883612, 65536, 3, 2883613, 65536, 3, 2883614, 65536, 3, 2883615, 65536, 3, 2883616, 65536, 3, 2883617, 65536, 3, 2883618, 65536, 3, 2883619, 65536, 3, 2818084, 65536, 3, 2818085, 65536, 3, 2818086, 65536, 3, 2818087, 65536, 3, 2818088, 65536, 3, 2818089, 65536, 3, 2818090, 65536, 3, 2818091, 65536, 3, 2818092, 65536, 3, 2818093, 65536, 3, 2818094, 65536, 3, 2883631, 65536, 3, 2883632, 65536, 3, 2883633, 65536, 3, 2883634, 65536, 3, 2883635, 65536, 3, 2883636, 65536, 3, 2883637, 65536, 3, 2883638, 65536, 3, 2883639, 65536, 3, 2883640, 65536, 3, 2883641, 65536, 3, 2883642, 65536, 3, 2883643, 65536, 3, 2883644, 65536, 3, 2883645, 65536, 3, 2883646, 65536, 3, 2097198, 65536, 0, 2097199, 196608, 0, 1966129, 65536, 3, 2031665, 65536, 4, 2097201, 65536, 4, 2162737, 65536, 4, 2228273, 65536, 4, 2293809, 65536, 4, 1966135, 65536, 0, 1966136, 131072, 0, 1966137, 196608, 0)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-16, 536)
+
+[node name="Elevator" parent="Node2D" instance=ExtResource("5_7c6rg")]
+position = Vector2(289, -710)
+
+[node name="Corde bleu" parent="Node2D" instance=ExtResource("13_70iun")]
+position = Vector2(512, -708)
 
 [node name="Player" parent="." instance=ExtResource("17_2v53c")]
-position = Vector2(32, 606)
+position = Vector2(-37, 606)
 
 [node name="jump_AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("18_wlw1h")
