@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8kphg1nj5or7"]
+[gd_scene load_steps=18 format=3 uid="uid://c8kphg1nj5or7"]
 
 [ext_resource type="Script" path="res://Main_lvl_02.gd" id="1_2hvre"]
+[ext_resource type="Texture2D" uid="uid://diobed0shab8s" path="res://assets/others/Curtainmain2.png" id="2_m0i6k"]
 [ext_resource type="PackedScene" uid="uid://bg24oecj33abg" path="res://Guillotine.tscn" id="2_om8ll"]
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_k8q0v"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="4_yrs5p"]
@@ -10,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bq4vko2mnunm6" path="res://Rope/corde_jaune2.tscn" id="11_aiq7b"]
 [ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://Rope/corde_bleu.tscn" id="13_70iun"]
 [ext_resource type="PackedScene" uid="uid://bwwwgijpvkswr" path="res://Rope/corde_jaune.tscn" id="14_3b0dy"]
-[ext_resource type="PackedScene" path="res://chkpt.tscn" id="15_y23jr"]
+[ext_resource type="PackedScene" uid="uid://dfg7t13hak38a" path="res://chkpt.tscn" id="15_y23jr"]
 [ext_resource type="PackedScene" uid="uid://bpythdnwn8b8j" path="res://end_of_level.tscn" id="16_sriyt"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="17_2v53c"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="18_wlw1h"]
@@ -19,6 +20,12 @@
 
 [node name="level_2" type="Node"]
 script = ExtResource("1_2hvre")
+
+[node name="Curtainmain2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(836, -30)
+scale = Vector2(1.42222, 1.42222)
+texture = ExtResource("2_m0i6k")
 
 [node name="Guillotine" parent="." instance=ExtResource("2_om8ll")]
 visible = false
