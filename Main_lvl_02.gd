@@ -1,15 +1,18 @@
 extends Node
 
+var is_music_playing := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	new_game()
-	AudioPlayer.play("level_two")
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if is_music_playing == 0:
+		AudioPlayer.stop("level_one")
+		AudioPlayer.autoplay("level_two")
+		AudioPlayer.play("level_two")
+	is_music_playing += 1.0
 
 func new_game():
 	$Player.start($PlayerStartPosition.position)
