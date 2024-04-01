@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdrot7rgcrda"]
+
+[ext_resource type="Texture2D" uid="uid://dfuhpmfs1s24v" path="res://assets/tiles/textures/chain1.png" id="1_8f7et"]
+[ext_resource type="Texture2D" uid="uid://cqdw7hbiqiqgp" path="res://assets/tiles/textures/chain2.png" id="2_kuvqm"]
+[ext_resource type="Script" path="res://Elevatorhori.gd" id="3_v76mt"]
+[ext_resource type="Texture2D" uid="uid://bidsfd8nb7g8c" path="res://assets/tiles/textures/platform_elevator.png" id="4_ilqnx"]
+[ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="6_wphvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3o8s"]
+size = Vector2(0, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27ruy"]
+size = Vector2(80, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itlof"]
+size = Vector2(624, 1)
+
+[node name="Elevator" type="Node2D"]
+position = Vector2(-159, -63)
+
+[node name="Blocage2" type="StaticBody2D" parent="."]
+position = Vector2(-66, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(224, 677.5)
+shape = SubResource("RectangleShape2D_b3o8s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(849, 677.5)
+shape = SubResource("RectangleShape2D_b3o8s")
+
+[node name="Blocage3" type="StaticBody2D" parent="."]
+position = Vector2(-65, 1)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage3"]
+position = Vector2(264, 782)
+shape = SubResource("RectangleShape2D_27ruy")
+
+[node name="Blocage4" type="StaticBody2D" parent="."]
+position = Vector2(-66, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage4"]
+position = Vector2(538, 765.5)
+shape = SubResource("RectangleShape2D_itlof")
+
+[node name="Elevator" type="CharacterBody2D" parent="."]
+position = Vector2(167, 647)
+collision_mask = 15
+script = ExtResource("3_v76mt")
+
+[node name="Left chain" type="Node2D" parent="Elevator"]
+position = Vector2(32, -49)
+
+[node name="Rope1BlueIdle" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, -16)
+texture = ExtResource("1_8f7et")
+
+[node name="Chain2" type="Sprite2D" parent="Elevator/Left chain"]
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain3" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 16)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain4" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 32)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain5" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 48)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain6" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 64)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain7" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 80)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain8" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 96)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain9" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 112)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain10" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 128)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain11" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 144)
+texture = ExtResource("2_kuvqm")
+
+[node name="Chain12" type="Sprite2D" parent="Elevator/Left chain"]
+position = Vector2(0, 160)
+texture = ExtResource("2_kuvqm")
+
+[node name="PlatformElevator" type="Sprite2D" parent="Elevator"]
+position = Vector2(32, 127)
+texture = ExtResource("4_ilqnx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Elevator"]
+position = Vector2(32, 127)
+polygon = PackedVector2Array(40, 8, -40, 8, -40, -8, 40, -8)
+
+[node name="Timer" type="Timer" parent="Elevator"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("6_wphvt")
+format = 2
+layer_0/tile_data = PackedInt32Array(2293771, 196608, 4, 2293770, 196608, 4, 2293789, 196608, 4, 2293772, 196608, 4, 2293773, 196608, 4, 2293774, 196608, 4, 2293775, 196608, 4, 2293776, 196608, 4, 2293777, 196608, 4, 2293778, 196608, 4, 2293779, 196608, 4, 2293780, 196608, 4, 2293781, 196608, 4, 2293782, 196608, 4, 2293783, 196608, 4, 2293784, 196608, 4, 2293786, 196608, 4, 2293787, 196608, 4, 2293788, 196608, 4, 2293785, 196608, 4, 2293790, 196608, 4, 2293791, 196608, 4, 2293792, 196608, 4, 2293793, 196608, 4, 2293794, 196608, 4, 2293795, 196608, 4, 2293796, 196608, 4, 2293797, 196608, 4, 2293798, 196608, 4, 2293799, 196608, 4, 2293800, 196608, 4, 2293801, 196608, 4, 2293802, 196608, 4, 2293803, 196608, 4, 2293804, 196608, 4, 2293805, 196608, 4, 2293806, 196608, 4, 2293807, 196608, 4, 2293808, 196608, 4, 2359307, 131072, 4, 2359343, 131072, 4)
+
+[connection signal="timeout" from="Elevator/Timer" to="Elevator" method="_on_timer_timeout"]
