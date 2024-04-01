@@ -170,6 +170,7 @@ position = Vector2(1063, 431)
 position = Vector2(2203, 672)
 
 [node name="Credit" parent="." instance=ExtResource("21_mws3c")]
+visible = false
 offset_left = -99.0
 offset_top = 46.0
 offset_right = -99.0

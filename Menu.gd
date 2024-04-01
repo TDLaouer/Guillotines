@@ -13,14 +13,14 @@ func _process(delta):
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Main.tscn")
-	pass # Replace with function body.
+	AudioPlayer.play("clic")
 
 func _on_credit_pressed():
 	get_tree().change_scene_to_file("res://credit.tscn")
-	pass # Replace with function body.
+	AudioPlayer.play("clic")
+	
 
 func _on_quit_pressed():
 	get_tree().quit()
 	
-	pass # Replace with function body.
 
