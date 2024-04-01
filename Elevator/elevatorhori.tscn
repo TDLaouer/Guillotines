@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfuhpmfs1s24v" path="res://assets/tiles/textures/chain1.png" id="1_8f7et"]
 [ext_resource type="Texture2D" uid="uid://cqdw7hbiqiqgp" path="res://assets/tiles/textures/chain2.png" id="2_kuvqm"]
-[ext_resource type="Script" path="res://Elevatorhori.gd" id="3_v76mt"]
+[ext_resource type="Script" path="res://Elevator/Elevatorhori.gd" id="3_v76mt"]
 [ext_resource type="Texture2D" uid="uid://bidsfd8nb7g8c" path="res://assets/tiles/textures/platform_elevator.png" id="4_ilqnx"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="6_wphvt"]
 

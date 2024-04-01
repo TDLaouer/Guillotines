@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cguveow4sjnkf"]
 
-[ext_resource type="Texture2D" uid="uid://dhsa2qh12em1w" path="res://assets/tiles/textures/rope1_red_idle.png" id="1_b7ncg"]
-[ext_resource type="Texture2D" uid="uid://jqodfga15vem" path="res://assets/tiles/textures/rope2_red_idle.png" id="2_k7nop"]
-[ext_resource type="Script" path="res://GuillotineRouge.gd" id="3_ahxpe"]
-[ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_w7ptq"]
-[ext_resource type="Texture2D" uid="uid://4nveiwvpjjnw" path="res://assets/tiles/textures/rope_red_node.png" id="5_bm5bm"]
+[ext_resource type="Texture2D" uid="uid://dhsa2qh12em1w" path="res://assets/tiles/textures/rope1_red_idle.png" id="1_t7h8q"]
+[ext_resource type="Texture2D" uid="uid://jqodfga15vem" path="res://assets/tiles/textures/rope2_red_idle.png" id="2_cw1ic"]
+[ext_resource type="Texture2D" uid="uid://4nveiwvpjjnw" path="res://assets/tiles/textures/rope_red_node.png" id="3_ewvx7"]
+[ext_resource type="Script" path="res://Rope/GuillotineRouge.gd" id="4_03p53"]
+[ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="5_cpmn4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t822j"]
 size = Vector2(0, 923)
@@ -20,106 +20,106 @@ collision_layer = 8
 collision_mask = 15
 
 [node name="Rope1RedIdle" type="Sprite2D" parent="StaticBody2D2"]
-texture = ExtResource("1_b7ncg")
+texture = ExtResource("1_t7h8q")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
 
 [node name="Rope2RedIdle" type="Sprite2D" parent="."]
 position = Vector2(480, 347)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle9" type="Sprite2D" parent="."]
 position = Vector2(480, 363)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle10" type="Sprite2D" parent="."]
 position = Vector2(480, 352)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle11" type="Sprite2D" parent="."]
 position = Vector2(480, 379)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle12" type="Sprite2D" parent="."]
 position = Vector2(480, 332)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle13" type="Sprite2D" parent="."]
 position = Vector2(480, 395)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle14" type="Sprite2D" parent="."]
 position = Vector2(480, 411)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle15" type="Sprite2D" parent="."]
 position = Vector2(480, 427)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle16" type="Sprite2D" parent="."]
 position = Vector2(480, 443)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle18" type="Sprite2D" parent="."]
 position = Vector2(480, 459)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle17" type="Sprite2D" parent="."]
 position = Vector2(480, 395)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle19" type="Sprite2D" parent="."]
 position = Vector2(480, 491)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle20" type="Sprite2D" parent="."]
 position = Vector2(480, 507)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle21" type="Sprite2D" parent="."]
 position = Vector2(480, 523)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle22" type="Sprite2D" parent="."]
 position = Vector2(480, 539)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle23" type="Sprite2D" parent="."]
 position = Vector2(480, 555)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle24" type="Sprite2D" parent="."]
 position = Vector2(480, 571)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle25" type="Sprite2D" parent="."]
 position = Vector2(480, 587)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle26" type="Sprite2D" parent="."]
 position = Vector2(480, 603)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle27" type="Sprite2D" parent="."]
 position = Vector2(480, 619)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle28" type="Sprite2D" parent="."]
 position = Vector2(480, 635)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle29" type="Sprite2D" parent="."]
 position = Vector2(480, 651)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle30" type="Sprite2D" parent="."]
 position = Vector2(480, 667)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="Rope2RedIdle31" type="Sprite2D" parent="."]
 position = Vector2(480, 683)
-texture = ExtResource("2_k7nop")
+texture = ExtResource("2_cw1ic")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -132,7 +132,7 @@ polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
 
 [node name="RopeRedNode" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(480, 475)
-texture = ExtResource("5_bm5bm")
+texture = ExtResource("3_ewvx7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(0, 72)
@@ -146,7 +146,7 @@ polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
 
 [node name="RopeRedNode" type="Sprite2D" parent="StaticBody2D4"]
 position = Vector2(480, 475)
-texture = ExtResource("5_bm5bm")
+texture = ExtResource("3_ewvx7")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(0, 224)
@@ -160,7 +160,7 @@ polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
 
 [node name="RopeRedNode" type="Sprite2D" parent="StaticBody2D3"]
 position = Vector2(480, 475)
-texture = ExtResource("5_bm5bm")
+texture = ExtResource("3_ewvx7")
 
 [node name="Blocage2" type="StaticBody2D" parent="."]
 position = Vector2(1, 0)
@@ -183,10 +183,10 @@ shape = SubResource("RectangleShape2D_t822j")
 [node name="Guillotine3" type="CharacterBody2D" parent="Blocage"]
 position = Vector2(465, 358)
 collision_mask = 15
-script = ExtResource("3_ahxpe")
+script = ExtResource("4_03p53")
 
 [node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine3"]
-texture = ExtResource("4_w7ptq")
+texture = ExtResource("5_cpmn4")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine3"]
 position = Vector2(0, 16)
@@ -207,10 +207,10 @@ one_shot = true
 [node name="Guillotine4" type="CharacterBody2D" parent="Blocage"]
 position = Vector2(465, 508)
 collision_mask = 15
-script = ExtResource("3_ahxpe")
+script = ExtResource("4_03p53")
 
 [node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine4"]
-texture = ExtResource("4_w7ptq")
+texture = ExtResource("5_cpmn4")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine4"]
 position = Vector2(0, 16)
@@ -231,10 +231,10 @@ one_shot = true
 [node name="Guillotine5" type="CharacterBody2D" parent="Blocage"]
 position = Vector2(465, 588)
 collision_mask = 15
-script = ExtResource("3_ahxpe")
+script = ExtResource("4_03p53")
 
 [node name="Sprite2D" type="Sprite2D" parent="Blocage/Guillotine5"]
-texture = ExtResource("4_w7ptq")
+texture = ExtResource("5_cpmn4")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocage/Guillotine5"]
 position = Vector2(0, 16)

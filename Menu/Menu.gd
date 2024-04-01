@@ -16,7 +16,7 @@ func _on_start_pressed():
 	AudioPlayer.play("clic")
 
 func _on_credit_pressed():
-	get_tree().change_scene_to_file("res://credit.tscn")
+	get_tree().change_scene_to_file("res://Menu/credit.tscn")
 	AudioPlayer.play("clic")
 	
 

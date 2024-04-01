@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b33isdd6wsftd"]
 
 [ext_resource type="Texture2D" uid="uid://wfvt4qt0f2rk" path="res://assets/tiles/textures/rope2_blue_idle.png" id="1_n81vm"]
-[ext_resource type="Script" path="res://GuillotineBleu.gd" id="2_onykw"]
+[ext_resource type="Script" path="res://Rope/GuillotineBleu.gd" id="2_onykw"]
 [ext_resource type="Texture2D" uid="uid://dal56y62gw50r" path="res://assets/tiles/textures/rope1_blue_idle.png" id="4_qy56t"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_xr7mq"]
 [ext_resource type="Texture2D" uid="uid://5gk01bxpuahc" path="res://assets/tiles/textures/rope_blue_node.png" id="5_3bc3o"]

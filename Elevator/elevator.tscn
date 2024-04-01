@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfuhpmfs1s24v" path="res://assets/tiles/textures/chain1.png" id="1_mujvk"]
 [ext_resource type="Texture2D" uid="uid://cqdw7hbiqiqgp" path="res://assets/tiles/textures/chain2.png" id="2_4g8gk"]
 [ext_resource type="Texture2D" uid="uid://bidsfd8nb7g8c" path="res://assets/tiles/textures/platform_elevator.png" id="3_4mvnl"]
-[ext_resource type="Script" path="res://Elevator.gd" id="3_ekwak"]
+[ext_resource type="Script" path="res://Elevator/Elevator.gd" id="3_ekwak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3o8s"]
 size = Vector2(0, 207)

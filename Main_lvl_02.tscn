@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bg24oecj33abg" path="res://Guillotine.tscn" id="2_om8ll"]
 [ext_resource type="Script" path="res://PlayerStartPosition.gd" id="3_k8q0v"]
 [ext_resource type="TileSet" uid="uid://jfi3c55fejp7" path="res://assets/tiles/game_tileset.tres" id="4_yrs5p"]
-[ext_resource type="PackedScene" path="res://elevatorhori.tscn" id="5_7c6rg"]
-[ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://corde_bleu.tscn" id="13_70iun"]
+[ext_resource type="PackedScene" uid="uid://cdrot7rgcrda" path="res://Elevator/elevatorhori.tscn" id="5_7c6rg"]
+[ext_resource type="PackedScene" uid="uid://ccq8p66j6i857" path="res://Menu/credit.tscn" id="10_lbb10"]
+[ext_resource type="PackedScene" uid="uid://b33isdd6wsftd" path="res://Rope/corde_bleu.tscn" id="13_70iun"]
 [ext_resource type="PackedScene" uid="uid://cipi2editgqqx" path="res://Player.tscn" id="17_2v53c"]
 [ext_resource type="AudioStream" uid="uid://cuk82s8pb5s0o" path="res://assets/sounds/chara_jumping.wav" id="18_wlw1h"]
 [ext_resource type="AudioStream" uid="uid://b04iqcqnsnrpe" path="res://assets/sounds/player_dies.wav" id="19_j1ibn"]
-[ext_resource type="PackedScene" uid="uid://ccq8p66j6i857" path="res://credit.tscn" id="21_mws3c"]
 
 [node name="level_2" type="Node"]
 script = ExtResource("1_n8lqm")
@@ -47,7 +47,7 @@ stream = ExtResource("18_wlw1h")
 [node name="death_AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("19_j1ibn")
 
-[node name="Credit" parent="." instance=ExtResource("21_mws3c")]
+[node name="Credit" parent="." instance=ExtResource("10_lbb10")]
 visible = false
 offset_left = -99.0
 offset_top = 46.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5alnox1r813j" path="res://assets/tiles/textures/rope1_yellow_idle.png" id="1_pvxab"]
 [ext_resource type="Texture2D" uid="uid://bboemeqiirw0t" path="res://assets/tiles/textures/rope2_yellow_idle.png" id="2_l5v33"]
-[ext_resource type="Script" path="res://GuillotineJaune.gd" id="3_7j6by"]
+[ext_resource type="Script" path="res://Rope/GuillotineJaune.gd" id="3_7j6by"]
 [ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_ipng5"]
 [ext_resource type="Texture2D" uid="uid://cpfn0pjigps23" path="res://assets/tiles/textures/rope_yellow_node.png" id="5_2mphx"]
 
