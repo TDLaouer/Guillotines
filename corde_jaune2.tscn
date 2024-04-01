@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq4vko2mnunm6"]
+
+[ext_resource type="Texture2D" uid="uid://c5alnox1r813j" path="res://assets/tiles/textures/rope1_yellow_idle.png" id="1_pvxab"]
+[ext_resource type="Texture2D" uid="uid://bboemeqiirw0t" path="res://assets/tiles/textures/rope2_yellow_idle.png" id="2_l5v33"]
+[ext_resource type="Script" path="res://GuillotineJaune.gd" id="3_7j6by"]
+[ext_resource type="Texture2D" uid="uid://ds56fbv4a67d4" path="res://assets/tiles/textures/guillotine5.png" id="4_ipng5"]
+[ext_resource type="Texture2D" uid="uid://cpfn0pjigps23" path="res://assets/tiles/textures/rope_yellow_node.png" id="5_2mphx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji634"]
+size = Vector2(12, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3g87"]
+size = Vector2(0, 345)
+
+[node name="Corde_jaune" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(599, 192)
+collision_layer = 8
+collision_mask = 15
+
+[node name="Rope1YellowIdle" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("1_pvxab")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-7, -8, -7, -4, -5, -2, 5, -2, 7, -4, 7, -8)
+
+[node name="Rope2YellowIdle" type="Sprite2D" parent="."]
+position = Vector2(599, 208)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle2" type="Sprite2D" parent="."]
+position = Vector2(599, 224)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle3" type="Sprite2D" parent="."]
+position = Vector2(599, 240)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle4" type="Sprite2D" parent="."]
+position = Vector2(599, 256)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle5" type="Sprite2D" parent="."]
+position = Vector2(599, 272)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle6" type="Sprite2D" parent="."]
+position = Vector2(599, 288)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle7" type="Sprite2D" parent="."]
+position = Vector2(599, 304)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle8" type="Sprite2D" parent="."]
+position = Vector2(599, 320)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle9" type="Sprite2D" parent="."]
+position = Vector2(599, 352)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle10" type="Sprite2D" parent="."]
+position = Vector2(599, 368)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle11" type="Sprite2D" parent="."]
+position = Vector2(599, 384)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle12" type="Sprite2D" parent="."]
+position = Vector2(599, 400)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle13" type="Sprite2D" parent="."]
+position = Vector2(599, 416)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle14" type="Sprite2D" parent="."]
+position = Vector2(599, 432)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle15" type="Sprite2D" parent="."]
+position = Vector2(599, 448)
+texture = ExtResource("2_l5v33")
+
+[node name="Rope2YellowIdle16" type="Sprite2D" parent="."]
+position = Vector2(599, 464)
+texture = ExtResource("2_l5v33")
+
+[node name="Guillotine3" type="CharacterBody2D" parent="."]
+position = Vector2(599, 257)
+collision_mask = 15
+script = ExtResource("3_7j6by")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine3"]
+texture = ExtResource("4_ipng5")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, 16)
+rotation = -3.14159
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine3"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine3"]
+shape = SubResource("RectangleShape2D_ji634")
+
+[node name="Timer" type="Timer" parent="Guillotine3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Guillotine4" type="CharacterBody2D" parent="."]
+position = Vector2(599, 393)
+collision_mask = 15
+script = ExtResource("3_7j6by")
+
+[node name="Sprite2D" type="Sprite2D" parent="Guillotine4"]
+texture = ExtResource("4_ipng5")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Guillotine4"]
+position = Vector2(0, 16)
+rotation = -3.14159
+polygon = PackedVector2Array(4.99997, -12, -5.00003, -12, -3.00005, -16, 2.99995, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Guillotine4"]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(5, -12, -5, -12, -3, -16, 3, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guillotine4"]
+shape = SubResource("RectangleShape2D_ji634")
+
+[node name="Timer" type="Timer" parent="Guillotine4"]
+wait_time = 3.0
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(599.1, 335.6)
+scale = Vector2(1.02083, 0.96875)
+polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
+
+[node name="RopeYellowNode" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(599, 336)
+texture = ExtResource("5_2mphx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(0, 144)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+position = Vector2(599.1, 335.6)
+scale = Vector2(1.02083, 0.96875)
+polygon = PackedVector2Array(2.84081, 8.67102, -3.03674, 8.67102, -3, -8, 3, -8)
+
+[node name="RopeYellowNode" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(599, 336)
+texture = ExtResource("5_2mphx")
+
+[node name="Blocage2" type="StaticBody2D" parent="."]
+position = Vector2(1, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage2"]
+position = Vector2(591, 356.5)
+shape = SubResource("RectangleShape2D_m3g87")
+
+[node name="Blocage" type="StaticBody2D" parent="."]
+position = Vector2(15, 0)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocage"]
+position = Vector2(590, 263.5)
+shape = SubResource("RectangleShape2D_m3g87")
+
+[connection signal="timeout" from="Guillotine3/Timer" to="Guillotine3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Guillotine4/Timer" to="Guillotine4" method="_on_timer_timeout"]
