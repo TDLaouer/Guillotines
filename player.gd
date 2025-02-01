@@ -50,8 +50,7 @@ func _physics_process(delta):
 	if is_fast_falling:
 		$AnimatedSprite2D.animation = "fast_fall"
 	
-	if !is_jumping:
-		velocity.x = get_input_velocity() * move_speed
+	velocity.x = get_input_velocity() * move_speed
 
 	if !is_fast_falling:
 		if is_grabbing_wall == true:
